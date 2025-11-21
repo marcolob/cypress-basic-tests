@@ -36,8 +36,8 @@ cypress/
 │ ├─ dropdown.cy.js
 │ ├─ checkbox.cy.js
 │ ├─ radio.cy.js
-│ ├─ hello.cy.js
-│ ├─ link.cy.js
+│ ├─ hello.cy.js (REAL website)
+│ ├─ link.cy.js  (REAL website)
 │ ├─ login.cy.js
 │ └─ real_sites/
 │   ├─ 01_homepage.cy.js       # Sauce Demo homepage
@@ -68,9 +68,9 @@ checkbox.cy.js – Select and deselect checkboxes
 
 radio.cy.js – Select radio button options
 
-hello.cy.js – Simple UI interaction test
+hello.cy.js – Simple UI interaction test (Real website)
 
-link.cy.js – Verify link navigation
+link.cy.js – Verify link navigation  (Real website)
 
 login.cy.js – Fill out and submit a login form
 
