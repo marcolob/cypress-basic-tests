@@ -74,7 +74,7 @@ link.cy.js – Verify link navigation  (Real website)
 
 login.cy.js – Fill out and submit a login form
 
-Real Sites (Sauce Demo)
+Real Sites (Sauce Demo.com)
 
 01_homepage.cy.js – Homepage: verify login form and elements
 
