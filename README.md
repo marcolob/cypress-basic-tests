@@ -1,4 +1,4 @@
-Cypress Basic Tests
+📌 Cypress Basic Tests
 
 This repository contains a simple Cypress automation project created to demonstrate foundational end-to-end testing skills.
 It includes:
