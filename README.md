@@ -56,7 +56,7 @@ README.md
 4. **radio.cy.js** – Select radio button options  
 5. **hello.cy.js** – Simple UI interaction test  
 6. **link.cy.js** – Verify link navigation
-(working on.. More tests and improvements will be added very soon)
+7. (working on.. More tests and improvements will be added very soon)
 
 📌 Purpose of This Repository
 
