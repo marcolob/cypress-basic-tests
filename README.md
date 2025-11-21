@@ -36,27 +36,31 @@ cypress/
 │ ├─ checkbox.cy.js
 │ ├─ radio.cy.js
 │ ├─ hello.cy.js
-│ └─ link.cy.js
+│ ├─ link.cy.js
+│ └─ login.cy.js
 ├─ fixtures/
 │ ├─ index.html
 │ ├─ dropdown.html
 │ ├─ checkbox.html
-│ └─ radio.html
+│ ├─ radio.html
+│ └─ login.html
 └─ support/
-└─ commands.js
+  └─ commands.js
 cypress.config.js
 package.json
 README.md
 
+
 📌 Tests Included
 
-1. **form.cy.js** – Fill out and submit a contact form  
-2. **dropdown.cy.js** – Select a value from a dropdown menu  
-3. **checkbox.cy.js** – Select and deselect checkboxes  
-4. **radio.cy.js** – Select radio button options  
-5. **hello.cy.js** – Simple UI interaction test  
-6. **link.cy.js** – Verify link navigation
-7. (working on.. More tests and improvements will be added very soon)
+1. form.cy.js – Fill out and submit a contact form  
+2. dropdown.cy.js – Select a value from a dropdown menu  
+3. checkbox.cy.js – Select and deselect checkboxes  
+4. radio.cy.js – Select radio button options  
+5. hello.cy.js – Simple UI interaction test  
+6. link.cy.js – Verify link navigation
+7. login.cy.js – Fill out and submit a login form
+8. (working on.. More tests and improvements will be added very soon)
 
 📌 Purpose of This Repository
 
