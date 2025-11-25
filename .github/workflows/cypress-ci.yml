@@ -1,6 +1,5 @@
 name: Cypress E2E Tests
 
-# Quando eseguire il workflow
 on:
   push:
     branches: [main]
@@ -12,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # 1️⃣ Scarica il codice dal repository
+      # 1️⃣ Checkout repository
       - name: Checkout repository
         uses: actions/checkout@v4
 
@@ -22,7 +21,7 @@ jobs:
         with:
           node-version: 18.16.0
 
-      # 3️⃣ Cache delle dipendenze per velocizzare npm install
+      # 3️⃣ Cache node modules
       - name: Cache node modules
         uses: actions/cache@v3
         with:
@@ -33,22 +32,22 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node-
 
-      # 4️⃣ Installa dipendenze
+      # 4️⃣ Install dependencies
       - name: Install dependencies
         run: npm ci
 
-      # 5️⃣ Esegui Cypress tests in headless
+      # 5️⃣ Run Cypress tests with Mochawesome reporter
       - name: Run Cypress tests
-        run: npx cypress run --headless
+        run: npx cypress run --reporter mochawesome --reporter-options reportDir=cypress/reports,json=true,overwrite=false,html=false
 
-      # 6️⃣ Genera report HTML con Mochawesome
+      # 6️⃣ Merge and generate HTML report
       - name: Generate Mochawesome report
         run: |
           mkdir -p cypress/reports/html
           npx mochawesome-merge cypress/reports/*.json > cypress/reports/report.json
           npx marge cypress/reports/report.json -f report -o cypress/reports/html
 
-      # 7️⃣ Salva report come artefatto
+      # 7️⃣ Upload report artifact
       - name: Upload report artifact
         uses: actions/upload-artifact@v4
         with:
