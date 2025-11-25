@@ -37,11 +37,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      # 5️⃣ Esegui Cypress tests
+      # 5️⃣ Esegui Cypress tests in headless
       - name: Run Cypress tests
-        run: npx cypress run
-        # Opzionale: stampa percorso completo di Cypress se fallisce
-        shell: bash
+        run: npx cypress run --headless
 
       # 6️⃣ Genera report HTML con Mochawesome
       - name: Generate Mochawesome report
