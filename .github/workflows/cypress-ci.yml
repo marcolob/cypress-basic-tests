@@ -3,40 +3,54 @@ name: Cypress E2E Tests
 # Quando eseguire il workflow
 on:
   push:
-    branches: [main]        # ogni volta che fai push sul branch main
+    branches: [main]
   pull_request:
-    branches: [main]        # ogni volta che apri PR sul branch main
+    branches: [main]
 
 jobs:
   cypress-run:
-    runs-on: ubuntu-latest   # sistema operativo virtuale su cui girano i test
+    runs-on: ubuntu-latest
 
     steps:
       # 1️⃣ Scarica il codice dal repository
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # 2️⃣ Installa Node.js (necessario per Cypress)
+      # 2️⃣ Setup Node.js
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 18
 
-      # 3️⃣ Installa dipendenze del progetto
-      - name: Install dependencies
-        run: npm install
+      # 3️⃣ Cache delle dipendenze per velocizzare npm install
+      - name: Cache node modules
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.npm
+            node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
 
-      # 4️⃣ Esegui i test Cypress
+      # 4️⃣ Installa dipendenze
+      - name: Install dependencies
+        run: npm ci
+
+      # 5️⃣ Esegui Cypress tests
       - name: Run Cypress tests
         run: npx cypress run
+        # Opzionale: stampa percorso completo di Cypress se fallisce
+        shell: bash
 
-      # 5️⃣ Genera report HTML con Mochawesome
+      # 6️⃣ Genera report HTML con Mochawesome
       - name: Generate Mochawesome report
         run: |
+          mkdir -p cypress/reports/html
           npx mochawesome-merge cypress/reports/*.json > cypress/reports/report.json
           npx marge cypress/reports/report.json -f report -o cypress/reports/html
 
-      # 6️⃣ Salva report HTML come artefatto scaricabile da GitHub
+      # 7️⃣ Salva report come artefatto
       - name: Upload report artifact
         uses: actions/upload-artifact@v4
         with:
