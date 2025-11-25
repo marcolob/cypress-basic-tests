@@ -22,86 +22,87 @@ GitHub Actions CI/CD (upcoming)
 📁 Project Structure
 
 cypress/
-  e2e/
-    basics/                 # UI tests on local HTML fixtures
-      form.cy.js
-      dropdown.cy.js
-      checkbox.cy.js
-      radio.cy.js
-      login.cy.js
-      hello.cy.js
-      link.cy.js
-
-    real_site/              # Real website automation (SauceDemo)
-      01_homepage.cy.js
-      02_product.cy.js
-      03_add_to_cart.cy.js
-      04_login.cy.js
-
-    smoke/                  # (To be added)
-    regression/             # (To be added)
-
-  fixtures/                 # Local HTML pages + test data
-    index.html
-    dropdown.html
-    checkbox.html
-    radio.html
-    login.html
-
-  pages/                    # Page Object Model (in progress)
-    loginPage.js
-    productsPage.js
-    cartPage.js
-
-  support/
-    commands.js
-    e2e.js
-
-cypress.config.js
-package.json
-README.md
+├─ e2e/
+│  ├─ basics/                 # UI tests on local HTML fixtures
+│  │   ├─ form.cy.js
+│  │   ├─ dropdown.cy.js
+│  │   ├─ checkbox.cy.js
+│  │   ├─ radio.cy.js
+│  │   ├─ login.cy.js
+│  │   ├─ hello.cy.js
+│  │   └─ link.cy.js
+│  │
+│  ├─ real_site/              # Real website automation (SauceDemo E2E)
+│  │   ├─ 01_homepage.cy.js
+│  │   ├─ 02_product.cy.js
+│  │   ├─ 03_add_to_cart.cy.js
+│  │   └─ 04_login.cy.js
+│  │
+│  ├─ smoke/                  # (To be added) Fast, critical-path tests
+│  └─ regression/             # (To be added) Full regression suite
+│
+├─ fixtures/                  # Local HTML pages + JSON test data
+│  ├─ index.html
+│  ├─ dropdown.html
+│  ├─ checkbox.html
+│  ├─ radio.html
+│  └─ login.html
+│
+├─ pages/                     # Page Object Model (POM) in progress
+│  ├─ loginPage.js
+│  ├─ productsPage.js
+│  └─ cartPage.js
+│
+├─ support/                   # Custom commands & global hooks
+│  ├─ commands.js
+│  └─ e2e.js
+│
+├─ cypress.config.js          # Cypress configuration + env variables
+├─ package.json               # Dependencies & scripts
+└─ README.md                  # Documentation
 
 📌 Folder Description
 🧪 basics/
 
-Contains simple UI interaction tests using local HTML fixtures:
+Contains local UI interaction tests:
 
-form validation
+Form validation
 
-inputs
+Inputs
 
-dropdowns
+Dropdowns
 
-radio buttons
+Radio buttons
 
-checkboxes
+Checkboxes
 
-links
+Links
+
 Great for demonstrating knowledge of selectors, Cypress commands, and assertions.
 
 🌐 real_site/
 
-Full end-to-end automation using SauceDemo, including:
+Full E2E automation on SauceDemo:
 
-login flow
+Login flow
 
-product listing validation
+Product listing validation
 
-add-to-cart functionality
+Add-to-cart functionality
 
 UI assertions
 
-complete E2E journeys
+Complete end-to-end journeys
 
 🏗️ pages/
 
-Page Object Model implementation (in progress):
+Page Object Model (in progress):
 
-centralized locators
+Centralized locators
 
-reusable UI actions
+Reusable UI actions
 
-improved maintainability
+Improved maintainability
 
 🔥 smoke/
 
@@ -113,20 +114,17 @@ To be added: full regression suite run before releases.
 
 📦 fixtures/
 
-Local HTML files and JSON datasets.
+Local HTML pages and JSON test data.
 
 🧰 support/
 
-Global config, reusable custom commands, and shared setup.
+Global configuration, reusable custom commands, and hooks.
 
 📬 Contact
 
 📧 Email: m.lobianco@hotmail.it
 
-🔗 LinkedIn: www.linkedin.com/in/marco-lo-bianco-869311b1
+🔗 LinkedIn: linkedin.com/in/marco-lo-bianco-869311b1
 
 😎 Open to collaboration, learning, and new QA Automation opportunities
 
-
-
-🔗 LinkedIn: www.linkedin.com/in/marco-lo-bianco-869311b1
