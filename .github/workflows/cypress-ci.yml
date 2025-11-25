@@ -1,0 +1,44 @@
+name: Cypress E2E Tests
+
+# Quando eseguire il workflow
+on:
+  push:
+    branches: [main]        # ogni volta che fai push sul branch main
+  pull_request:
+    branches: [main]        # ogni volta che apri PR sul branch main
+
+jobs:
+  cypress-run:
+    runs-on: ubuntu-latest   # sistema operativo virtuale su cui girano i test
+
+    steps:
+      # 1️⃣ Scarica il codice dal repository
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # 2️⃣ Installa Node.js (necessario per Cypress)
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      # 3️⃣ Installa dipendenze del progetto
+      - name: Install dependencies
+        run: npm install
+
+      # 4️⃣ Esegui i test Cypress
+      - name: Run Cypress tests
+        run: npx cypress run
+
+      # 5️⃣ Genera report HTML con Mochawesome
+      - name: Generate Mochawesome report
+        run: |
+          npx mochawesome-merge cypress/reports/*.json > cypress/reports/report.json
+          npx marge cypress/reports/report.json -f report -o cypress/reports/html
+
+      # 6️⃣ Salva report HTML come artefatto scaricabile da GitHub
+      - name: Upload report artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: mochawesome-report
+          path: cypress/reports/html
