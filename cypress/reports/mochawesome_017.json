@@ -1,0 +1,105 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-11-25T17:37:49.915Z",
+    "end": "2025-11-25T17:37:50.533Z",
+    "duration": 618,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "0bf0fd2c-b71c-4a44-8033-52b89f53ec23",
+      "title": "",
+      "fullFile": "cypress\\e2e\\basics\\radio.cy.js",
+      "file": "cypress\\e2e\\basics\\radio.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "612c2a0b-e04a-468f-91e8-3df0383aac80",
+          "title": "Test Radio Buttons",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Seleziona una opzione radio",
+              "fullTitle": "Test Radio Buttons Seleziona una opzione radio",
+              "timedOut": null,
+              "duration": 482,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('cypress/fixtures/radio.html');\n// Controlla che le opzioni siano visibili\ncy.get('input[name=\"genere\"]').should('have.length', 2);\n// Seleziona \"Maschio\"\ncy.get('input[name=\"genere\"][value=\"maschio\"]').check().should('be.checked');\n// Verifica che \"Femmina\" non sia selezionata\ncy.get('input[name=\"genere\"][value=\"femmina\"]').should('not.be.checked');",
+              "err": {},
+              "uuid": "38ec96c5-fa96-4908-ba74-612963012fa6",
+              "parentUUID": "612c2a0b-e04a-468f-91e8-3df0383aac80",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "38ec96c5-fa96-4908-ba74-612963012fa6"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 482,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}

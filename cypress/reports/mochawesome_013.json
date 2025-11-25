@@ -1,0 +1,105 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-11-25T17:37:21.424Z",
+    "end": "2025-11-25T17:37:24.231Z",
+    "duration": 2807,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "c0cba500-ecd7-4a8f-88bb-82afe26cd2c2",
+      "title": "",
+      "fullFile": "cypress\\e2e\\basics\\form.cy.js",
+      "file": "cypress\\e2e\\basics\\form.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "96af2c4b-aa01-4d84-82e9-129b41eca9e3",
+          "title": "Test Modulo di Contatto Locale",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Compila e invia il modulo di contatto",
+              "fullTitle": "Test Modulo di Contatto Locale Compila e invia il modulo di contatto",
+              "timedOut": null,
+              "duration": 2641,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Visita il file HTML locale (relativo alla cartella cypress/fixtures)\ncy.visit('cypress/fixtures/index.html');\n// Controlla che il modulo sia visibile\ncy.get('form').should('be.visible');\n// Compila i campi del modulo\ncy.get('input[name=\"nome\"]').type('Mario Rossi');\ncy.get('input[name=\"email\"]').type('mario.rossi@example.com');\ncy.get('textarea[name=\"messaggio\"]').type('Ciao, vorrei maggiori informazioni sui vostri servizi.');\n// Invia il modulo\ncy.get('button[type=\"submit\"]').click();\n// Verifica che il messaggio di conferma sia visibile\ncy.get('.success-message').should('be.visible').and('contain', 'Grazie per averci contattato!');",
+              "err": {},
+              "uuid": "660d4018-6f33-4adb-ab86-e72e55181bf5",
+              "parentUUID": "96af2c4b-aa01-4d84-82e9-129b41eca9e3",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "660d4018-6f33-4adb-ab86-e72e55181bf5"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 2641,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}

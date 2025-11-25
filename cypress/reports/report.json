@@ -1,11 +1,11 @@
 {
   "stats": {
-    "suites": 11,
-    "tests": 14,
-    "passes": 14,
+    "suites": 22,
+    "tests": 28,
+    "passes": 28,
     "pending": 0,
     "failures": 0,
-    "testsRegistered": 14,
+    "testsRegistered": 28,
     "passPercent": 100,
     "pendingPercent": 0,
     "other": 0,
@@ -13,8 +13,8 @@
     "skipped": 0,
     "hasSkipped": false,
     "start": "2025-11-25T12:11:42.983Z",
-    "end": "2025-11-25T12:12:26.407Z",
-    "duration": 43424
+    "end": "2025-11-25T17:38:33.002Z",
+    "duration": 19610019
   },
   "results": [
     {
@@ -640,6 +640,701 @@
           "pending": [],
           "skipped": [],
           "duration": 1443,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "141e1c80-c5bc-4c89-abc6-0c2ed1e2c178",
+      "title": "",
+      "fullFile": "cypress\\e2e\\basics\\checkbox.cy.js",
+      "file": "cypress\\e2e\\basics\\checkbox.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "dc18dc01-ef4e-4f55-a128-601c302e1c54",
+          "title": "Test Checkbox",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Seleziona e deseleziona una checkbox",
+              "fullTitle": "Test Checkbox Seleziona e deseleziona una checkbox",
+              "timedOut": null,
+              "duration": 957,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('cypress/fixtures/checkbox.html');\n// Controlla che la checkbox sia visibile\ncy.get('input[name=\"newsletter\"]').should('be.visible');\n// Seleziona la checkbox\ncy.get('input[name=\"newsletter\"]').check().should('be.checked');\n// Deseleziona la checkbox\ncy.get('input[name=\"newsletter\"]').uncheck().should('not.be.checked');",
+              "err": {},
+              "uuid": "5c2cfe52-ad94-4627-a71b-d9c1e0f9338c",
+              "parentUUID": "dc18dc01-ef4e-4f55-a128-601c302e1c54",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "5c2cfe52-ad94-4627-a71b-d9c1e0f9338c"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 957,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "cf5ba31d-cc3b-4c5f-a46e-00e9784578e9",
+      "title": "",
+      "fullFile": "cypress\\e2e\\basics\\dropdown.cy.js",
+      "file": "cypress\\e2e\\basics\\dropdown.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "1053a8fd-3137-412a-8a3d-709e871142a8",
+          "title": "Test Dropdown",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Seleziona un valore dal dropdown",
+              "fullTitle": "Test Dropdown Seleziona un valore dal dropdown",
+              "timedOut": null,
+              "duration": 466,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('cypress/fixtures/dropdown.html');\n// Controlla che il dropdown sia visibile\ncy.get('select[name=\"frutta\"]').should('be.visible');\n// Seleziona un valore\ncy.get('select[name=\"frutta\"]').select('Banana');\n// Verifica che il valore selezionato sia corretto\ncy.get('select[name=\"frutta\"]').should('have.value', 'banana');",
+              "err": {},
+              "uuid": "59e211fa-e182-4704-a714-393ecbe533e9",
+              "parentUUID": "1053a8fd-3137-412a-8a3d-709e871142a8",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "59e211fa-e182-4704-a714-393ecbe533e9"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 466,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "c0cba500-ecd7-4a8f-88bb-82afe26cd2c2",
+      "title": "",
+      "fullFile": "cypress\\e2e\\basics\\form.cy.js",
+      "file": "cypress\\e2e\\basics\\form.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "96af2c4b-aa01-4d84-82e9-129b41eca9e3",
+          "title": "Test Modulo di Contatto Locale",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Compila e invia il modulo di contatto",
+              "fullTitle": "Test Modulo di Contatto Locale Compila e invia il modulo di contatto",
+              "timedOut": null,
+              "duration": 2641,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Visita il file HTML locale (relativo alla cartella cypress/fixtures)\ncy.visit('cypress/fixtures/index.html');\n// Controlla che il modulo sia visibile\ncy.get('form').should('be.visible');\n// Compila i campi del modulo\ncy.get('input[name=\"nome\"]').type('Mario Rossi');\ncy.get('input[name=\"email\"]').type('mario.rossi@example.com');\ncy.get('textarea[name=\"messaggio\"]').type('Ciao, vorrei maggiori informazioni sui vostri servizi.');\n// Invia il modulo\ncy.get('button[type=\"submit\"]').click();\n// Verifica che il messaggio di conferma sia visibile\ncy.get('.success-message').should('be.visible').and('contain', 'Grazie per averci contattato!');",
+              "err": {},
+              "uuid": "660d4018-6f33-4adb-ab86-e72e55181bf5",
+              "parentUUID": "96af2c4b-aa01-4d84-82e9-129b41eca9e3",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "660d4018-6f33-4adb-ab86-e72e55181bf5"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 2641,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "cf52793d-4a01-4f51-8922-8ba8577f7907",
+      "title": "",
+      "fullFile": "cypress\\e2e\\basics\\hello.cy.js",
+      "file": "cypress\\e2e\\basics\\hello.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "77b01d6d-30c3-4989-b92f-d6b1daa079be",
+          "title": "Hello World Test",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Visita Google e controlla il titolo",
+              "fullTitle": "Hello World Test Visita Google e controlla il titolo",
+              "timedOut": null,
+              "duration": 2707,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://www.google.com');\ncy.title().should('include', 'Google');",
+              "err": {},
+              "uuid": "e7207f3e-7454-48b3-ae3a-5bef14cf29b0",
+              "parentUUID": "77b01d6d-30c3-4989-b92f-d6b1daa079be",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "e7207f3e-7454-48b3-ae3a-5bef14cf29b0"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 2707,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "dbd39433-ec11-490f-8e87-aedc5dca61c0",
+      "title": "",
+      "fullFile": "cypress\\e2e\\basics\\link.cy.js",
+      "file": "cypress\\e2e\\basics\\link.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "fb0d2abf-83a1-474a-b099-7fa5dba610ff",
+          "title": "Test Link",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Clicca sul link \"type\" e verifica URL",
+              "fullTitle": "Test Link Clicca sul link \"type\" e verifica URL",
+              "timedOut": null,
+              "duration": 1762,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://example.cypress.io');\ncy.contains('type').click();\ncy.url().should('include', '/commands/actions');",
+              "err": {},
+              "uuid": "d11948c8-dc0c-4527-bab6-f716fa9ba51a",
+              "parentUUID": "fb0d2abf-83a1-474a-b099-7fa5dba610ff",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "d11948c8-dc0c-4527-bab6-f716fa9ba51a"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1762,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "d9014109-b335-4169-bacd-b0664bfe0d70",
+      "title": "",
+      "fullFile": "cypress\\e2e\\basics\\login.cy.js",
+      "file": "cypress\\e2e\\basics\\login.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "46307013-ebe8-481c-8f1b-9c65af2a41b8",
+          "title": "Login Form Test",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Should login with correct credentials",
+              "fullTitle": "Login Form Test Should login with correct credentials",
+              "timedOut": null,
+              "duration": 816,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('cypress/fixtures/login.html');\ncy.get('input[name=\"username\"]').type('admin');\ncy.get('input[name=\"password\"]').type('1234');\ncy.get('button[type=\"submit\"]').click();\ncy.get('.message').should('contain', 'Login successful');",
+              "err": {},
+              "uuid": "f603e614-4717-47a9-973f-50b1256b426f",
+              "parentUUID": "46307013-ebe8-481c-8f1b-9c65af2a41b8",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Should show error for wrong credentials",
+              "fullTitle": "Login Form Test Should show error for wrong credentials",
+              "timedOut": null,
+              "duration": 801,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('cypress/fixtures/login.html');\ncy.get('input[name=\"username\"]').type('user');\ncy.get('input[name=\"password\"]').type('wrong');\ncy.get('button[type=\"submit\"]').click();\ncy.get('.message').should('contain', 'Invalid credentials');",
+              "err": {},
+              "uuid": "1a185616-03f3-49be-8ddd-19e75572d04c",
+              "parentUUID": "46307013-ebe8-481c-8f1b-9c65af2a41b8",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "f603e614-4717-47a9-973f-50b1256b426f",
+            "1a185616-03f3-49be-8ddd-19e75572d04c"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1617,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "0bf0fd2c-b71c-4a44-8033-52b89f53ec23",
+      "title": "",
+      "fullFile": "cypress\\e2e\\basics\\radio.cy.js",
+      "file": "cypress\\e2e\\basics\\radio.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "612c2a0b-e04a-468f-91e8-3df0383aac80",
+          "title": "Test Radio Buttons",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Seleziona una opzione radio",
+              "fullTitle": "Test Radio Buttons Seleziona una opzione radio",
+              "timedOut": null,
+              "duration": 482,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('cypress/fixtures/radio.html');\n// Controlla che le opzioni siano visibili\ncy.get('input[name=\"genere\"]').should('have.length', 2);\n// Seleziona \"Maschio\"\ncy.get('input[name=\"genere\"][value=\"maschio\"]').check().should('be.checked');\n// Verifica che \"Femmina\" non sia selezionata\ncy.get('input[name=\"genere\"][value=\"femmina\"]').should('not.be.checked');",
+              "err": {},
+              "uuid": "38ec96c5-fa96-4908-ba74-612963012fa6",
+              "parentUUID": "612c2a0b-e04a-468f-91e8-3df0383aac80",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "38ec96c5-fa96-4908-ba74-612963012fa6"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 482,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "5281a340-f2bd-4b6b-bd46-4aec6b2a47cb",
+      "title": "",
+      "fullFile": "cypress\\e2e\\real_sites\\01_homepage.cy.js",
+      "file": "cypress\\e2e\\real_sites\\01_homepage.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "79179f21-a5f2-4f4c-b69e-be882ef83240",
+          "title": "Login Page Tests",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should display login form correctly",
+              "fullTitle": "Login Page Tests should display login form correctly",
+              "timedOut": null,
+              "duration": 1952,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Assert: check all elements exist\n_loginPage.default.usernameInput().should('be.visible');\n_loginPage.default.passwordInput().should('be.visible');\n_loginPage.default.loginButton().should('be.visible');",
+              "err": {},
+              "uuid": "b0ca1a7f-cb74-40f7-ae24-309a2bf71a14",
+              "parentUUID": "79179f21-a5f2-4f4c-b69e-be882ef83240",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should show error message on invalid credentials",
+              "fullTitle": "Login Page Tests should show error message on invalid credentials",
+              "timedOut": null,
+              "duration": 1572,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Act: enter invalid credentials\n_loginPage.default.enterUsername('invalid_user');\n_loginPage.default.enterPassword('invalid_pass');\n_loginPage.default.clickLogin();\n// Assert: error message is visible\n_loginPage.default.errorMessage().should('be.visible').and('contain.text', 'Epic sadface: Username and password do not match any user in this service');",
+              "err": {},
+              "uuid": "4d0b81b2-6155-41d5-828c-1e75e0e98942",
+              "parentUUID": "79179f21-a5f2-4f4c-b69e-be882ef83240",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "b0ca1a7f-cb74-40f7-ae24-309a2bf71a14",
+            "4d0b81b2-6155-41d5-828c-1e75e0e98942"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 3524,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "1c664281-5004-461b-8498-08f6b83652d9",
+      "title": "",
+      "fullFile": "cypress\\e2e\\real_sites\\02_product.cy.js",
+      "file": "cypress\\e2e\\real_sites\\02_product.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "b93fbaec-b703-4253-a1af-d064a197d2c2",
+          "title": "Product Page Tests",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should display product titles",
+              "fullTitle": "Product Page Tests should display product titles",
+              "timedOut": null,
+              "duration": 3066,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Assert: at least one product is visible\n_productsPage.default.productTitle().should('have.length.greaterThan', 0);",
+              "err": {},
+              "uuid": "378ed2bb-914d-4ed1-97e2-efe1d93869a4",
+              "parentUUID": "b93fbaec-b703-4253-a1af-d064a197d2c2",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should add a product to the cart",
+              "fullTitle": "Product Page Tests should add a product to the cart",
+              "timedOut": null,
+              "duration": 2637,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Act: add first product to cart\n_productsPage.default.productTitle().first().then($el => {\n  const productName = $el.text();\n  _productsPage.default.addProductToCart(productName);\n  // Assert: cart badge shows 1\n  _productsPage.default.shoppingCartLink().should('contain.text', '1');\n});",
+              "err": {},
+              "uuid": "6f3d9579-d36f-470b-b139-c456766b2808",
+              "parentUUID": "b93fbaec-b703-4253-a1af-d064a197d2c2",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "378ed2bb-914d-4ed1-97e2-efe1d93869a4",
+            "6f3d9579-d36f-470b-b139-c456766b2808"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 5703,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "a2690dec-ee85-4fce-8f00-50394b638d83",
+      "title": "",
+      "fullFile": "cypress\\e2e\\real_sites\\03_add_to_cart.cy.js",
+      "file": "cypress\\e2e\\real_sites\\03_add_to_cart.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "401b2d18-8203-4059-86bd-126b0596cdb2",
+          "title": "Add to Cart Flow",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should add multiple products to the cart",
+              "fullTitle": "Add to Cart Flow should add multiple products to the cart",
+              "timedOut": null,
+              "duration": 3404,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const products = ['Sauce Labs Backpack', 'Sauce Labs Bike Light'];\n// Act: add products\nproducts.forEach(product => _productsPage.default.addProductToCart(product));\n_productsPage.default.goToCart();\n// Assert: all products are in the cart\nproducts.forEach(product => _cartPage.default.verifyProductInCart(product));",
+              "err": {},
+              "uuid": "f9550423-55e5-411a-bb3c-94cb79a15557",
+              "parentUUID": "401b2d18-8203-4059-86bd-126b0596cdb2",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "f9550423-55e5-411a-bb3c-94cb79a15557"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 3404,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "8bb5e259-2c14-49be-907e-07cdeaf0a543",
+      "title": "",
+      "fullFile": "cypress\\e2e\\real_sites\\04_login.cy.js",
+      "file": "cypress\\e2e\\real_sites\\04_login.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "7dc5ed13-d456-4ee4-b6c5-a4e20de6383b",
+          "title": "Login Flow",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should login successfully with valid credentials",
+              "fullTitle": "Login Flow should login successfully with valid credentials",
+              "timedOut": null,
+              "duration": 2799,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Arrange: visit login page\n_loginPage.default.visit();\n// Act: login with valid credentials\n_loginPage.default.enterUsername('standard_user');\n_loginPage.default.enterPassword('secret_sauce');\n_loginPage.default.clickLogin();\n// Assert: URL includes /inventory.html\ncy.url().should('include', '/inventory.html');",
+              "err": {},
+              "uuid": "4877fc83-7738-4180-be81-0f1b535fa47e",
+              "parentUUID": "7dc5ed13-d456-4ee4-b6c5-a4e20de6383b",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "4877fc83-7738-4180-be81-0f1b535fa47e"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 2799,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000

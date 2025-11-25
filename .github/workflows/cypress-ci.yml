@@ -11,17 +11,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # 1️⃣ Checkout repository
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # 2️⃣ Setup Node.js
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 18.16.0
 
-      # 3️⃣ Cache node modules
       - name: Cache node modules
         uses: actions/cache@v3
         with:
@@ -32,26 +29,35 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node-
 
-      # 4️⃣ Install dependencies
       - name: Install dependencies
         run: npm ci
 
-      # 5️⃣ Run Cypress tests (usa reporter dal config)
+      # 👇 FORZO IL REPORTER --reporter mochawesome
       - name: Run Cypress tests
-        run: npx cypress run --headless
+        run: npx cypress run --headless --reporter mochawesome --reporter-options "reportDir=cypress/reports,overwrite=false,html=false,json=true"
 
-      # 6️⃣ Debug: verifica che i JSON siano stati creati
-      - name: List report files
-        run: ls -l cypress/reports
+      # 👇 DEBUG FONDAMENTALE
+      - name: Check Cypress report folder
+        run: |
+          echo "=== Reports generated ==="
+          ls -l cypress/reports || echo "Reports folder missing"
+          echo "=== JSON files ==="
+          ls -l cypress/reports/*.json || echo "NO JSON FILES FOUND"
 
-      # 7️⃣ Merge e genera report HTML con Mochawesome
-      - name: Generate Mochawesome report
+      # 👇 MERGE SOLO SE I JSON ESISTONO
+      - name: Merge Mochawesome JSON
         run: |
           mkdir -p cypress/reports/html
+          JSON_COUNT=$(ls cypress/reports/*.json 2>/dev/null | wc -l)
+          if [ "$JSON_COUNT" -eq "0" ]; then
+            echo "❌ No JSON files found. Cannot merge."
+            exit 1
+          fi
           npx mochawesome-merge cypress/reports/*.json > cypress/reports/report.json
-          npx marge cypress/reports/report.json -f report -o cypress/reports/html
 
-      # 8️⃣ Upload report come artefatto
+      - name: Generate HTML report
+        run: npx marge cypress/reports/report.json -f report -o cypress/reports/html
+
       - name: Upload report artifact
         uses: actions/upload-artifact@v4
         with:
