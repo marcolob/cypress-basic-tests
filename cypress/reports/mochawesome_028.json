@@ -2,89 +2,65 @@
   "stats": {
     "suites": 1,
     "tests": 1,
-    "passes": 0,
+    "passes": 1,
     "pending": 0,
-    "failures": 1,
-    "start": "2025-11-26T12:28:02.182Z",
-    "end": "2025-11-26T12:28:02.437Z",
-    "duration": 255,
-    "testsRegistered": 2,
-    "passPercent": 0,
+    "failures": 0,
+    "start": "2025-11-26T16:44:35.343Z",
+    "end": "2025-11-26T16:44:36.652Z",
+    "duration": 1309,
+    "testsRegistered": 1,
+    "passPercent": 100,
     "pendingPercent": 0,
     "other": 0,
     "hasOther": false,
-    "skipped": 1,
-    "hasSkipped": true
+    "skipped": 0,
+    "hasSkipped": false
   },
   "results": [
     {
-      "uuid": "5ce03974-fdc8-436f-972b-a22f1571034d",
+      "uuid": "759a2119-9345-4389-96e7-cb35bc771bdc",
       "title": "",
-      "fullFile": "cypress\\e2e\\real_sites\\01_homepage.cy.js",
-      "file": "cypress\\e2e\\real_sites\\01_homepage.cy.js",
+      "fullFile": "cypress\\e2e\\intercepts\\intercept.cy.js",
+      "file": "cypress\\e2e\\intercepts\\intercept.cy.js",
       "beforeHooks": [],
       "afterHooks": [],
       "tests": [],
       "suites": [
         {
-          "uuid": "82966e2d-592c-42fd-a3b2-ae798eeb0b39",
-          "title": "Login Page Tests",
+          "uuid": "bd41b1fe-06e6-4ed8-8ff1-bd1c1c922183",
+          "title": "Intercept Test - SauceDemo",
           "fullFile": "",
           "file": "",
           "beforeHooks": [],
           "afterHooks": [],
           "tests": [
             {
-              "title": "should display login form correctly",
-              "fullTitle": "Login Page Tests should display login form correctly",
+              "title": "should login and check inventory items exist",
+              "fullTitle": "Intercept Test - SauceDemo should login and check inventory items exist",
               "timedOut": null,
-              "duration": 189,
-              "state": "failed",
-              "speed": null,
-              "pass": false,
-              "fail": true,
-              "pending": false,
-              "context": null,
-              "code": "// Assert: check all elements exist\n_loginPage.default.usernameInput().should('be.visible');\n_loginPage.default.passwordInput().should('be.visible');\n_loginPage.default.loginButton().should('be.visible');",
-              "err": {
-                "message": "TypeError: _loginPage.default.visit is not a function\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `Login Page Tests`",
-                "estack": "TypeError: _loginPage.default.visit is not a function\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `Login Page Tests`\n    at Context.eval (webpack://cypressclean/./cypress/e2e/real_sites/01_homepage.cy.js:7:14)\n    at runnable.fn (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:141800:19)\n    at callFn (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:160869:21)\n    at Runnable.run (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:160856:7)\n    at <unknown> (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:166951:30)\n    at PassThroughHandlerContext.finallyHandler (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:4042:23)\n    at PassThroughHandlerContext.tryCatcher (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1546:18)",
-                "diff": null
-              },
-              "uuid": "559fc56f-c5fd-49f2-99c3-6f069ea27042",
-              "parentUUID": "82966e2d-592c-42fd-a3b2-ae798eeb0b39",
-              "isHook": false,
-              "skipped": false
-            },
-            {
-              "title": "should show error message on invalid credentials",
-              "fullTitle": "Login Page Tests should show error message on invalid credentials",
-              "timedOut": null,
-              "duration": 0,
-              "state": "skipped",
-              "speed": null,
-              "pass": false,
+              "duration": 1236,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
               "fail": false,
               "pending": false,
               "context": null,
-              "code": "// Act: enter invalid credentials\n_loginPage.default.enterUsername('invalid_user');\n_loginPage.default.enterPassword('invalid_pass');\n_loginPage.default.clickLogin();\n// Assert: error message is visible\n_loginPage.default.errorMessage().should('be.visible').and('contain.text', 'Epic sadface: Username and password do not match any user in this service');",
+              "code": "cy.visit('https://www.saucedemo.com/');\ncy.get('[data-test=username]').type('standard_user');\ncy.get('[data-test=password]').type('secret_sauce');\ncy.get('[data-test=login-button]').click();\n// verifica elementi caricati\ncy.get('.inventory_item').should('have.length.greaterThan', 0);",
               "err": {},
-              "uuid": "683e2d52-8dee-46e7-93a0-19d520b24788",
-              "parentUUID": "82966e2d-592c-42fd-a3b2-ae798eeb0b39",
+              "uuid": "f4b8ab27-891b-4deb-8bb9-29c481ae3186",
+              "parentUUID": "bd41b1fe-06e6-4ed8-8ff1-bd1c1c922183",
               "isHook": false,
-              "skipped": true
+              "skipped": false
             }
           ],
           "suites": [],
-          "passes": [],
-          "failures": [
-            "559fc56f-c5fd-49f2-99c3-6f069ea27042"
+          "passes": [
+            "f4b8ab27-891b-4deb-8bb9-29c481ae3186"
           ],
+          "failures": [],
           "pending": [],
-          "skipped": [
-            "683e2d52-8dee-46e7-93a0-19d520b24788"
-          ],
-          "duration": 189,
+          "skipped": [],
+          "duration": 1236,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000

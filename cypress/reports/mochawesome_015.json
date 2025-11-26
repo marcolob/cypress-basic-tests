@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2025-11-26T12:07:17.847Z",
-    "end": "2025-11-26T12:07:23.781Z",
-    "duration": 5934,
+    "start": "2025-11-26T16:11:07.140Z",
+    "end": "2025-11-26T16:11:10.625Z",
+    "duration": 3485,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "efb8d598-9edf-4ddd-9900-2447b24c345f",
+      "uuid": "ff9040b0-bac6-4c65-b89d-1e6f7af55130",
       "title": "",
       "fullFile": "cypress\\e2e\\real_sites\\04_login.cy.js",
       "file": "cypress\\e2e\\real_sites\\04_login.cy.js",
@@ -27,8 +27,8 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "fbf34fe2-c128-437c-b23c-972fe1fcf25a",
-          "title": "Login Flow",
+          "uuid": "045b4bc7-0a61-441a-91a8-90a0298aef1d",
+          "title": "Login Flow - SauceDemo",
           "fullFile": "",
           "file": "",
           "beforeHooks": [],
@@ -36,31 +36,31 @@
           "tests": [
             {
               "title": "should login successfully with valid credentials",
-              "fullTitle": "Login Flow should login successfully with valid credentials",
+              "fullTitle": "Login Flow - SauceDemo should login successfully with valid credentials",
               "timedOut": null,
-              "duration": 2619,
+              "duration": 3294,
               "state": "passed",
               "speed": "fast",
               "pass": true,
               "fail": false,
               "pending": false,
               "context": null,
-              "code": "// Arrange: visit login page\n_loginPage.default.visit();\n// Act: login with valid credentials\n_loginPage.default.enterUsername('standard_user');\n_loginPage.default.enterPassword('secret_sauce');\n_loginPage.default.clickLogin();\n// Assert: URL includes /inventory.html\ncy.url().should('include', '/inventory.html');",
+              "code": "cy.visit('/');\ncy.get('[data-test=username]').type('standard_user');\ncy.get('[data-test=password]').type('secret_sauce');\ncy.get('[data-test=login-button]').click();\ncy.url().should('include', '/inventory.html');",
               "err": {},
-              "uuid": "22118a55-7829-4e2e-9fa8-733ae68b5c86",
-              "parentUUID": "fbf34fe2-c128-437c-b23c-972fe1fcf25a",
+              "uuid": "eea8e25a-959c-4ffe-a8b3-03eef8a842d7",
+              "parentUUID": "045b4bc7-0a61-441a-91a8-90a0298aef1d",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "22118a55-7829-4e2e-9fa8-733ae68b5c86"
+            "eea8e25a-959c-4ffe-a8b3-03eef8a842d7"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 2619,
+          "duration": 3294,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000

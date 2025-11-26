@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2025-11-26T12:07:06.098Z",
-    "end": "2025-11-26T12:07:13.929Z",
-    "duration": 7831,
+    "start": "2025-11-26T16:10:57.993Z",
+    "end": "2025-11-26T16:11:02.150Z",
+    "duration": 4157,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "ea12c651-c0b3-4911-b205-13b8fc2f9a57",
+      "uuid": "2e907538-00e9-4366-bf0c-5b63fab3d15c",
       "title": "",
       "fullFile": "cypress\\e2e\\real_sites\\03_add_to_cart.cy.js",
       "file": "cypress\\e2e\\real_sites\\03_add_to_cart.cy.js",
@@ -27,8 +27,8 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "6a3a0b9f-36d6-42a2-9bc7-33bd11b0b5fa",
-          "title": "Add to Cart Flow",
+          "uuid": "c0d98f7b-b5f1-4a14-a797-30ac6fc1dd68",
+          "title": "Add to Cart Flow - SauceDemo",
           "fullFile": "",
           "file": "",
           "beforeHooks": [],
@@ -36,31 +36,31 @@
           "tests": [
             {
               "title": "should add multiple products to the cart",
-              "fullTitle": "Add to Cart Flow should add multiple products to the cart",
+              "fullTitle": "Add to Cart Flow - SauceDemo should add multiple products to the cart",
               "timedOut": null,
-              "duration": 4247,
+              "duration": 3984,
               "state": "passed",
               "speed": "fast",
               "pass": true,
               "fail": false,
               "pending": false,
               "context": null,
-              "code": "const products = ['Sauce Labs Backpack', 'Sauce Labs Bike Light'];\n// Act: add products\nproducts.forEach(product => _productsPage.default.addProductToCart(product));\n_productsPage.default.goToCart();\n// Assert: all products are in the cart\nproducts.forEach(product => _cartPage.default.verifyProductInCart(product));",
+              "code": "cy.get('.inventory_item').each(($el, index) => {\n  if (index < 2) {\n    cy.wrap($el).find('.btn_inventory').click();\n  }\n});\ncy.get('.shopping_cart_badge').should('contain', '2');",
               "err": {},
-              "uuid": "9d6d0cef-ca6e-4240-a604-6b23862e0661",
-              "parentUUID": "6a3a0b9f-36d6-42a2-9bc7-33bd11b0b5fa",
+              "uuid": "8f47942d-ca70-45f0-87cc-ebe92d4708f2",
+              "parentUUID": "c0d98f7b-b5f1-4a14-a797-30ac6fc1dd68",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "9d6d0cef-ca6e-4240-a604-6b23862e0661"
+            "8f47942d-ca70-45f0-87cc-ebe92d4708f2"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 4247,
+          "duration": 3984,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000

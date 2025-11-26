@@ -1,14 +1,14 @@
 {
   "stats": {
     "suites": 1,
-    "tests": 2,
-    "passes": 2,
+    "tests": 1,
+    "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2025-11-26T12:06:43.923Z",
-    "end": "2025-11-26T12:06:51.012Z",
-    "duration": 7089,
-    "testsRegistered": 2,
+    "start": "2025-11-26T16:10:41.586Z",
+    "end": "2025-11-26T16:10:43.263Z",
+    "duration": 1677,
+    "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
     "other": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "2670d801-c070-42af-9ff1-a90f0f3bb02e",
+      "uuid": "13e20cbf-d863-430d-a326-cc9094530a45",
       "title": "",
       "fullFile": "cypress\\e2e\\real_sites\\01_homepage.cy.js",
       "file": "cypress\\e2e\\real_sites\\01_homepage.cy.js",
@@ -27,8 +27,8 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "1790c5bf-b2fa-43a0-9dc0-b9afebf35744",
-          "title": "Login Page Tests",
+          "uuid": "9c7620a6-38d1-462c-9ca5-2cb2ab7fa936",
+          "title": "Homepage Tests - SauceDemo",
           "fullFile": "",
           "file": "",
           "beforeHooks": [],
@@ -36,50 +36,31 @@
           "tests": [
             {
               "title": "should display login form correctly",
-              "fullTitle": "Login Page Tests should display login form correctly",
+              "fullTitle": "Homepage Tests - SauceDemo should display login form correctly",
               "timedOut": null,
-              "duration": 1664,
+              "duration": 1499,
               "state": "passed",
               "speed": "fast",
               "pass": true,
               "fail": false,
               "pending": false,
               "context": null,
-              "code": "// Assert: check all elements exist\n_loginPage.default.usernameInput().should('be.visible');\n_loginPage.default.passwordInput().should('be.visible');\n_loginPage.default.loginButton().should('be.visible');",
+              "code": "cy.get('[data-test=username]').should('be.visible');\ncy.get('[data-test=password]').should('be.visible');\ncy.get('[data-test=login-button]').should('be.visible');",
               "err": {},
-              "uuid": "9b4f3703-aaed-4114-9572-740ae0f64a0f",
-              "parentUUID": "1790c5bf-b2fa-43a0-9dc0-b9afebf35744",
-              "isHook": false,
-              "skipped": false
-            },
-            {
-              "title": "should show error message on invalid credentials",
-              "fullTitle": "Login Page Tests should show error message on invalid credentials",
-              "timedOut": null,
-              "duration": 1501,
-              "state": "passed",
-              "speed": "fast",
-              "pass": true,
-              "fail": false,
-              "pending": false,
-              "context": null,
-              "code": "// Act: enter invalid credentials\n_loginPage.default.enterUsername('invalid_user');\n_loginPage.default.enterPassword('invalid_pass');\n_loginPage.default.clickLogin();\n// Assert: error message is visible\n_loginPage.default.errorMessage().should('be.visible').and('contain.text', 'Epic sadface: Username and password do not match any user in this service');",
-              "err": {},
-              "uuid": "407af091-fade-4a43-a4ea-490a05470e0d",
-              "parentUUID": "1790c5bf-b2fa-43a0-9dc0-b9afebf35744",
+              "uuid": "732bc31d-daff-4fe1-8a56-2af99bd0bef3",
+              "parentUUID": "9c7620a6-38d1-462c-9ca5-2cb2ab7fa936",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "9b4f3703-aaed-4114-9572-740ae0f64a0f",
-            "407af091-fade-4a43-a4ea-490a05470e0d"
+            "732bc31d-daff-4fe1-8a56-2af99bd0bef3"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 3165,
+          "duration": 1499,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000

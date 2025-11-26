@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2025-11-26T12:06:01.617Z",
-    "end": "2025-11-26T12:06:02.350Z",
-    "duration": 733,
+    "start": "2025-11-26T16:09:38.005Z",
+    "end": "2025-11-26T16:09:41.726Z",
+    "duration": 3721,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "0bdda8a1-5e19-4ead-9c59-149d520977e9",
+      "uuid": "c1aeddf5-bbe1-419d-b5ef-8901ceeafd1d",
       "title": "",
       "fullFile": "cypress\\e2e\\basics\\checkbox.cy.js",
       "file": "cypress\\e2e\\basics\\checkbox.cy.js",
@@ -27,40 +27,40 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "d2dfc73f-700b-48bc-a4c0-26eabc3b2324",
-          "title": "Test Checkbox",
+          "uuid": "392a9486-6146-4130-975e-582031a6d96a",
+          "title": "Product Filter Checkbox - SauceDemo",
           "fullFile": "",
           "file": "",
           "beforeHooks": [],
           "afterHooks": [],
           "tests": [
             {
-              "title": "Seleziona e deseleziona una checkbox",
-              "fullTitle": "Test Checkbox Seleziona e deseleziona una checkbox",
+              "title": "should select \"Price (low to high)\" filter",
+              "fullTitle": "Product Filter Checkbox - SauceDemo should select \"Price (low to high)\" filter",
               "timedOut": null,
-              "duration": 616,
+              "duration": 3385,
               "state": "passed",
               "speed": "fast",
               "pass": true,
               "fail": false,
               "pending": false,
               "context": null,
-              "code": "cy.visit('cypress/fixtures/checkbox.html');\n// Controlla che la checkbox sia visibile\ncy.get('input[name=\"newsletter\"]').should('be.visible');\n// Seleziona la checkbox\ncy.get('input[name=\"newsletter\"]').check().should('be.checked');\n// Deseleziona la checkbox\ncy.get('input[name=\"newsletter\"]').uncheck().should('not.be.checked');",
+              "code": "cy.get('.product_sort_container').select('lohi');\ncy.get('.inventory_item_price').first().should('contain.text', '7.99'); // prezzo più basso",
               "err": {},
-              "uuid": "dbf621d9-3db8-43a5-ab30-7b1ce22512d7",
-              "parentUUID": "d2dfc73f-700b-48bc-a4c0-26eabc3b2324",
+              "uuid": "dae9ff17-dd65-474e-83a8-3349249f156b",
+              "parentUUID": "392a9486-6146-4130-975e-582031a6d96a",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "dbf621d9-3db8-43a5-ab30-7b1ce22512d7"
+            "dae9ff17-dd65-474e-83a8-3349249f156b"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 616,
+          "duration": 3385,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000

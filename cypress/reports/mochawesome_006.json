@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2025-11-26T12:06:05.827Z",
-    "end": "2025-11-26T12:06:06.307Z",
-    "duration": 480,
+    "start": "2025-11-26T16:09:46.617Z",
+    "end": "2025-11-26T16:09:49.573Z",
+    "duration": 2956,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "242d9d9f-1127-468b-8170-3d55abee842a",
+      "uuid": "a34ae264-1668-46d4-a936-5fcf6c8fcdec",
       "title": "",
       "fullFile": "cypress\\e2e\\basics\\dropdown.cy.js",
       "file": "cypress\\e2e\\basics\\dropdown.cy.js",
@@ -27,40 +27,40 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "853579ee-7d7e-4868-aafc-e124ab44bccc",
-          "title": "Test Dropdown",
+          "uuid": "2d9f439e-f93c-455b-99c7-e505a7661e25",
+          "title": "Dropdown Test - SauceDemo",
           "fullFile": "",
           "file": "",
           "beforeHooks": [],
           "afterHooks": [],
           "tests": [
             {
-              "title": "Seleziona un valore dal dropdown",
-              "fullTitle": "Test Dropdown Seleziona un valore dal dropdown",
+              "title": "should select an option from product sort dropdown",
+              "fullTitle": "Dropdown Test - SauceDemo should select an option from product sort dropdown",
               "timedOut": null,
-              "duration": 441,
+              "duration": 2755,
               "state": "passed",
               "speed": "fast",
               "pass": true,
               "fail": false,
               "pending": false,
               "context": null,
-              "code": "cy.visit('cypress/fixtures/dropdown.html');\n// Controlla che il dropdown sia visibile\ncy.get('select[name=\"frutta\"]').should('be.visible');\n// Seleziona un valore\ncy.get('select[name=\"frutta\"]').select('Banana');\n// Verifica che il valore selezionato sia corretto\ncy.get('select[name=\"frutta\"]').should('have.value', 'banana');",
+              "code": "cy.get('.product_sort_container').select('Price (low to high)');\ncy.get('.inventory_item').first().should('contain.text', 'Sauce Labs Onesie');",
               "err": {},
-              "uuid": "844b2c1c-fc87-4b01-95ac-64ec3442581a",
-              "parentUUID": "853579ee-7d7e-4868-aafc-e124ab44bccc",
+              "uuid": "fdbae9dc-bcc2-4ab0-af85-63fccf84a021",
+              "parentUUID": "2d9f439e-f93c-455b-99c7-e505a7661e25",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "844b2c1c-fc87-4b01-95ac-64ec3442581a"
+            "fdbae9dc-bcc2-4ab0-af85-63fccf84a021"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 441,
+          "duration": 2755,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000

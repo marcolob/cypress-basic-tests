@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2025-11-26T12:06:40.005Z",
-    "end": "2025-11-26T12:06:40.777Z",
-    "duration": 772,
+    "start": "2025-11-26T16:10:33.462Z",
+    "end": "2025-11-26T16:10:37.086Z",
+    "duration": 3624,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "932ea057-8ad7-4890-96f9-2390dfe587ea",
+      "uuid": "5e7f0539-e1cc-40e8-bd0f-1fc39a494021",
       "title": "",
       "fullFile": "cypress\\e2e\\basics\\radio.cy.js",
       "file": "cypress\\e2e\\basics\\radio.cy.js",
@@ -27,40 +27,40 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "b3199141-71a4-4175-8801-df42703185b6",
-          "title": "Test Radio Buttons",
+          "uuid": "1a635939-a520-4523-86b2-bed1bc9d1566",
+          "title": "Radio-like Test - SauceDemo",
           "fullFile": "",
           "file": "",
           "beforeHooks": [],
           "afterHooks": [],
           "tests": [
             {
-              "title": "Seleziona una opzione radio",
-              "fullTitle": "Test Radio Buttons Seleziona una opzione radio",
+              "title": "should filter products using dropdown",
+              "fullTitle": "Radio-like Test - SauceDemo should filter products using dropdown",
               "timedOut": null,
-              "duration": 651,
+              "duration": 3454,
               "state": "passed",
               "speed": "fast",
               "pass": true,
               "fail": false,
               "pending": false,
               "context": null,
-              "code": "cy.visit('cypress/fixtures/radio.html');\n// Controlla che le opzioni siano visibili\ncy.get('input[name=\"genere\"]').should('have.length', 2);\n// Seleziona \"Maschio\"\ncy.get('input[name=\"genere\"][value=\"maschio\"]').check().should('be.checked');\n// Verifica che \"Femmina\" non sia selezionata\ncy.get('input[name=\"genere\"][value=\"femmina\"]').should('not.be.checked');",
+              "code": "cy.get('.product_sort_container').select('Name (Z to A)');\ncy.get('.inventory_item').first().should('contain.text', 'Test.allTheThings() T-Shirt (Red)');",
               "err": {},
-              "uuid": "c8ab67ad-e5f5-41d9-91ee-74485b2f21c4",
-              "parentUUID": "b3199141-71a4-4175-8801-df42703185b6",
+              "uuid": "2c73a389-f61c-4fce-859e-40e32692a869",
+              "parentUUID": "1a635939-a520-4523-86b2-bed1bc9d1566",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "c8ab67ad-e5f5-41d9-91ee-74485b2f21c4"
+            "2c73a389-f61c-4fce-859e-40e32692a869"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 651,
+          "duration": 3454,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000

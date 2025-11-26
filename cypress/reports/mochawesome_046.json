@@ -2,89 +2,65 @@
   "stats": {
     "suites": 1,
     "tests": 1,
-    "passes": 0,
+    "passes": 1,
     "pending": 0,
-    "failures": 1,
-    "start": "2025-11-26T13:01:29.121Z",
-    "end": "2025-11-26T13:01:29.331Z",
-    "duration": 210,
-    "testsRegistered": 2,
-    "passPercent": 0,
+    "failures": 0,
+    "start": "2025-11-26T16:54:45.685Z",
+    "end": "2025-11-26T16:54:47.710Z",
+    "duration": 2025,
+    "testsRegistered": 1,
+    "passPercent": 100,
     "pendingPercent": 0,
     "other": 0,
     "hasOther": false,
-    "skipped": 1,
-    "hasSkipped": true
+    "skipped": 0,
+    "hasSkipped": false
   },
   "results": [
     {
-      "uuid": "8f07009d-e6a1-44f4-8273-7fc224722b18",
+      "uuid": "ed27ee75-63a4-4149-ac84-6037c19ce3c1",
       "title": "",
-      "fullFile": "cypress\\e2e\\real_sites\\02_product.cy.js",
-      "file": "cypress\\e2e\\real_sites\\02_product.cy.js",
+      "fullFile": "cypress\\e2e\\forms\\form.cy.js",
+      "file": "cypress\\e2e\\forms\\form.cy.js",
       "beforeHooks": [],
       "afterHooks": [],
       "tests": [],
       "suites": [
         {
-          "uuid": "694a337a-d174-49a2-944a-0947014c2b66",
-          "title": "Product Page Tests",
+          "uuid": "88fd5ec1-b63d-4718-aaa2-99471b415b11",
+          "title": "Contact Form Test - SauceDemo",
           "fullFile": "",
           "file": "",
           "beforeHooks": [],
           "afterHooks": [],
           "tests": [
             {
-              "title": "should display product titles",
-              "fullTitle": "Product Page Tests should display product titles",
+              "title": "should submit the form",
+              "fullTitle": "Contact Form Test - SauceDemo should submit the form",
               "timedOut": null,
-              "duration": 142,
-              "state": "failed",
-              "speed": null,
-              "pass": false,
-              "fail": true,
-              "pending": false,
-              "context": null,
-              "code": "// Assert: at least one product is visible\n_productsPage.default.productTitle().should('have.length.greaterThan', 0);",
-              "err": {
-                "message": "TypeError: _loginPage.default.visit is not a function\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `Product Page Tests`",
-                "estack": "TypeError: _loginPage.default.visit is not a function\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `Product Page Tests`\n    at Context.eval (webpack://cypressclean/./cypress/e2e/real_sites/02_product.cy.js:8:14)\n    at runnable.fn (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:141800:19)\n    at callFn (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:160869:21)\n    at Runnable.run (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:160856:7)\n    at <unknown> (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:166951:30)\n    at PassThroughHandlerContext.finallyHandler (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:4042:23)\n    at PassThroughHandlerContext.tryCatcher (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1546:18)",
-                "diff": null
-              },
-              "uuid": "159305d7-dca1-43f9-9eca-aba0ff0bb75e",
-              "parentUUID": "694a337a-d174-49a2-944a-0947014c2b66",
-              "isHook": false,
-              "skipped": false
-            },
-            {
-              "title": "should add a product to the cart",
-              "fullTitle": "Product Page Tests should add a product to the cart",
-              "timedOut": null,
-              "duration": 0,
-              "state": "skipped",
-              "speed": null,
-              "pass": false,
+              "duration": 1935,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
               "fail": false,
               "pending": false,
               "context": null,
-              "code": "// Act: add first product to cart\n_productsPage.default.productTitle().first().then($el => {\n  const productName = $el.text();\n  _productsPage.default.addProductToCart(productName);\n  // Assert: cart badge shows 1\n  _productsPage.default.shoppingCartLink().should('contain.text', '1');\n});",
+              "code": "cy.visit('/');\ncy.get('[data-test=username]').type('standard_user');\ncy.get('[data-test=password]').type('secret_sauce');\ncy.get('[data-test=login-button]').click();\n// aggiunge i primi 2 prodotti al carrello\ncy.get('.inventory_item').each(($el, index) => {\n  if (index < 2) {\n    cy.wrap($el).find('.btn_inventory').click();\n  }\n});\n// verifica badge carrello\ncy.get('.shopping_cart_badge').should('contain', '2');",
               "err": {},
-              "uuid": "323c5a53-2f62-404b-bd69-99cc5d50eef2",
-              "parentUUID": "694a337a-d174-49a2-944a-0947014c2b66",
+              "uuid": "989dfaa1-4e8b-4c4f-a788-c7c9088b5a25",
+              "parentUUID": "88fd5ec1-b63d-4718-aaa2-99471b415b11",
               "isHook": false,
-              "skipped": true
+              "skipped": false
             }
           ],
           "suites": [],
-          "passes": [],
-          "failures": [
-            "159305d7-dca1-43f9-9eca-aba0ff0bb75e"
+          "passes": [
+            "989dfaa1-4e8b-4c4f-a788-c7c9088b5a25"
           ],
+          "failures": [],
           "pending": [],
-          "skipped": [
-            "323c5a53-2f62-404b-bd69-99cc5d50eef2"
-          ],
-          "duration": 142,
+          "skipped": [],
+          "duration": 1935,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000

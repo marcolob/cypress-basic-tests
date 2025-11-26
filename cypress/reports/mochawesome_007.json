@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2025-11-26T12:06:10.272Z",
-    "end": "2025-11-26T12:06:12.911Z",
-    "duration": 2639,
+    "start": "2025-11-26T16:09:54.720Z",
+    "end": "2025-11-26T16:09:57.434Z",
+    "duration": 2714,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "238d5797-c502-41e7-a30e-e769f02dbff5",
+      "uuid": "fb3817d2-6ed9-457e-9f35-d770c89d7f3d",
       "title": "",
       "fullFile": "cypress\\e2e\\basics\\form.cy.js",
       "file": "cypress\\e2e\\basics\\form.cy.js",
@@ -27,40 +27,40 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "09973ac6-9b20-4df4-ad6d-70de4aa54cfb",
-          "title": "Test Modulo di Contatto Locale",
+          "uuid": "164bf1ae-efa8-499d-83f7-1b55dda5ea2a",
+          "title": "Contact Form Test - SauceDemo",
           "fullFile": "",
           "file": "",
           "beforeHooks": [],
           "afterHooks": [],
           "tests": [
             {
-              "title": "Compila e invia il modulo di contatto",
-              "fullTitle": "Test Modulo di Contatto Locale Compila e invia il modulo di contatto",
+              "title": "should submit the form",
+              "fullTitle": "Contact Form Test - SauceDemo should submit the form",
               "timedOut": null,
-              "duration": 2494,
+              "duration": 2597,
               "state": "passed",
               "speed": "fast",
               "pass": true,
               "fail": false,
               "pending": false,
               "context": null,
-              "code": "// Visita il file HTML locale (relativo alla cartella cypress/fixtures)\ncy.visit('cypress/fixtures/index.html');\n// Controlla che il modulo sia visibile\ncy.get('form').should('be.visible');\n// Compila i campi del modulo\ncy.get('input[name=\"nome\"]').type('Mario Rossi');\ncy.get('input[name=\"email\"]').type('mario.rossi@example.com');\ncy.get('textarea[name=\"messaggio\"]').type('Ciao, vorrei maggiori informazioni sui vostri servizi.');\n// Invia il modulo\ncy.get('button[type=\"submit\"]').click();\n// Verifica che il messaggio di conferma sia visibile\ncy.get('.success-message').should('be.visible').and('contain', 'Grazie per averci contattato!');",
+              "code": "cy.visit('/');\ncy.get('[data-test=username]').type('standard_user');\ncy.get('[data-test=password]').type('secret_sauce');\ncy.get('[data-test=login-button]').click();\n// scegli un prodotto qualsiasi\ncy.get('.inventory_item:first .inventory_item_name').click();\ncy.get('.btn_inventory').click();\n// verifica aggiunta al carrello\ncy.get('.shopping_cart_badge').should('contain', '1');",
               "err": {},
-              "uuid": "f1acfebb-8154-4865-8111-1558c16b0591",
-              "parentUUID": "09973ac6-9b20-4df4-ad6d-70de4aa54cfb",
+              "uuid": "33c4894d-7b07-44c7-9bd5-06ec086b02e9",
+              "parentUUID": "164bf1ae-efa8-499d-83f7-1b55dda5ea2a",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "f1acfebb-8154-4865-8111-1558c16b0591"
+            "33c4894d-7b07-44c7-9bd5-06ec086b02e9"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 2494,
+          "duration": 2597,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000

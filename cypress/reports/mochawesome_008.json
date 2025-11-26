@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2025-11-26T12:06:16.032Z",
-    "end": "2025-11-26T12:06:21.933Z",
-    "duration": 5901,
+    "start": "2025-11-26T16:10:02.367Z",
+    "end": "2025-11-26T16:10:09.722Z",
+    "duration": 7355,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "afa9f18f-746b-4b13-81bc-2da1c6393196",
+      "uuid": "6dea67e0-4c31-4bd3-bc6d-97ee5314f392",
       "title": "",
       "fullFile": "cypress\\e2e\\basics\\hello.cy.js",
       "file": "cypress\\e2e\\basics\\hello.cy.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "e2615a39-21b4-4710-997a-0c8014a112cb",
+          "uuid": "6fc9a603-e0ca-42a0-97da-a8c09a1c3ef9",
           "title": "Hello World Test",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "Visita Google e controlla il titolo",
               "fullTitle": "Hello World Test Visita Google e controlla il titolo",
               "timedOut": null,
-              "duration": 2137,
+              "duration": 2215,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -47,20 +47,20 @@
               "context": null,
               "code": "cy.visit('https://www.google.com');\ncy.title().should('include', 'Google');",
               "err": {},
-              "uuid": "22f4a47f-91bc-42a5-94df-ead78be73a0a",
-              "parentUUID": "e2615a39-21b4-4710-997a-0c8014a112cb",
+              "uuid": "4b9b42b1-b3d0-42c5-abbf-37d771c76e53",
+              "parentUUID": "6fc9a603-e0ca-42a0-97da-a8c09a1c3ef9",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "22f4a47f-91bc-42a5-94df-ead78be73a0a"
+            "4b9b42b1-b3d0-42c5-abbf-37d771c76e53"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 2137,
+          "duration": 2215,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000

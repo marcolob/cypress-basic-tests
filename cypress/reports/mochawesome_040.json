@@ -1,15 +1,15 @@
 {
   "stats": {
     "suites": 1,
-    "tests": 2,
+    "tests": 1,
     "passes": 1,
     "pending": 0,
-    "failures": 1,
-    "start": "2025-11-26T13:00:58.142Z",
-    "end": "2025-11-26T13:01:04.832Z",
-    "duration": 6690,
-    "testsRegistered": 2,
-    "passPercent": 50,
+    "failures": 0,
+    "start": "2025-11-26T16:54:19.935Z",
+    "end": "2025-11-26T16:54:21.492Z",
+    "duration": 1557,
+    "testsRegistered": 1,
+    "passPercent": 100,
     "pendingPercent": 0,
     "other": 0,
     "hasOther": false,
@@ -18,73 +18,49 @@
   },
   "results": [
     {
-      "uuid": "49a81d8d-16c5-4bcc-8c17-985d1dda7a08",
+      "uuid": "d1da0a3c-29de-43de-9fa2-6a59f7b438f2",
       "title": "",
-      "fullFile": "cypress\\e2e\\basics\\radio.cy.js",
-      "file": "cypress\\e2e\\basics\\radio.cy.js",
+      "fullFile": "cypress\\e2e\\basics\\dropdown.cy.js",
+      "file": "cypress\\e2e\\basics\\dropdown.cy.js",
       "beforeHooks": [],
       "afterHooks": [],
       "tests": [],
       "suites": [
         {
-          "uuid": "05b333a6-c394-47ba-8065-f4fe1f92550c",
-          "title": "Basic Interactions - SauceDemo",
+          "uuid": "43e129e2-f0df-4b81-b6c6-ae144bdb0715",
+          "title": "Dropdown Test - SauceDemo",
           "fullFile": "",
           "file": "",
           "beforeHooks": [],
           "afterHooks": [],
           "tests": [
             {
-              "title": "should select first product (checkbox-like)",
-              "fullTitle": "Basic Interactions - SauceDemo should select first product (checkbox-like)",
+              "title": "should select an option from product sort dropdown",
+              "fullTitle": "Dropdown Test - SauceDemo should select an option from product sort dropdown",
               "timedOut": null,
-              "duration": 1518,
+              "duration": 1470,
               "state": "passed",
               "speed": "fast",
               "pass": true,
               "fail": false,
               "pending": false,
               "context": null,
-              "code": "cy.get('.inventory_item').first().contains('Add to cart').click();\ncy.get('.shopping_cart_badge').should('contain', '1');",
+              "code": "cy.get('.product_sort_container').select('Price (low to high)');\ncy.get('.inventory_item').first().should('contain.text', 'Sauce Labs Onesie');",
               "err": {},
-              "uuid": "9e89a6d9-86fa-47ed-ad60-d5d674ada42d",
-              "parentUUID": "05b333a6-c394-47ba-8065-f4fe1f92550c",
-              "isHook": false,
-              "skipped": false
-            },
-            {
-              "title": "should select a product (radio-like)",
-              "fullTitle": "Basic Interactions - SauceDemo should select a product (radio-like)",
-              "timedOut": null,
-              "duration": 5080,
-              "state": "failed",
-              "speed": null,
-              "pass": false,
-              "fail": true,
-              "pending": false,
-              "context": null,
-              "code": "cy.get('.inventory_item').first().click();\ncy.get('.inventory_details_name').should('exist');",
-              "err": {
-                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `.inventory_details_name`, but never found it.",
-                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `.inventory_details_name`, but never found it.\n    at Context.eval (webpack://cypressclean/./cypress/e2e/basics/radio.cy.js:16:38)",
-                "diff": null
-              },
-              "uuid": "298c3e6f-b524-4195-8910-171d113d496e",
-              "parentUUID": "05b333a6-c394-47ba-8065-f4fe1f92550c",
+              "uuid": "0a322c72-58f4-4a8e-8e24-fa48a4e9327c",
+              "parentUUID": "43e129e2-f0df-4b81-b6c6-ae144bdb0715",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "9e89a6d9-86fa-47ed-ad60-d5d674ada42d"
+            "0a322c72-58f4-4a8e-8e24-fa48a4e9327c"
           ],
-          "failures": [
-            "298c3e6f-b524-4195-8910-171d113d496e"
-          ],
+          "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 6598,
+          "duration": 1470,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000

@@ -2,71 +2,37 @@ name: Cypress E2E Tests
 
 on:
   push:
-    branches: [main]
+    branches:
+      - main
   pull_request:
-    branches: [main]
+    branches:
+      - main
 
 jobs:
   cypress-run:
     runs-on: ubuntu-latest
-
     steps:
-      # 1️⃣ Checkout repository
+      # 1️⃣ Checkout del repo
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v3
 
       # 2️⃣ Setup Node.js
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v3
         with:
-          node-version: 18.16.0
+          node-version: 18
 
-      # 3️⃣ Cache dependencies
-      - name: Cache node modules
-        uses: actions/cache@v3
-        with:
-          path: |
-            ~/.npm
-            node_modules
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
-
-      # 4️⃣ Install dependencies
+      # 3️⃣ Install dependencies
       - name: Install dependencies
         run: npm ci
 
-      # 5️⃣ Run Cypress tests with Mochawesome reporter
-      - name: Run Cypress tests
-        run: npx cypress run --headless --reporter mochawesome --reporter-options "reportDir=cypress/reports,overwrite=false,html=false,json=true"
+      # 4️⃣ Esegui Cypress + merge + HTML in un colpo solo
+      - name: Run Cypress and generate HTML report
+        run: npm run test:all
 
-      # 6️⃣ Debug: controlla che i JSON siano stati generati
-      - name: Check Cypress report folder
-        run: |
-          echo "=== Reports generated ==="
-          ls -l cypress/reports || echo "Reports folder missing"
-          echo "=== JSON files ==="
-          ls -l cypress/reports/mochawesome_*.json || echo "NO JSON FILES FOUND"
-
-      # 7️⃣ Assicurati che la cartella di merge esista e poi merge dei JSON
-      - name: Merge Mochawesome JSON
-        run: |
-          mkdir -p cypress/reports        # assicura cartella per report.json
-          mkdir -p cypress/reports/html   # assicura cartella per report HTML
-          JSON_COUNT=$(ls cypress/reports/mochawesome_*.json 2>/dev/null | wc -l)
-          if [ "$JSON_COUNT" -eq "0" ]; then
-            echo "❌ No JSON files found. Cannot merge."
-            exit 1
-          fi
-          npx mochawesome-merge cypress/reports/mochawesome_*.json > cypress/reports/report.json
-
-      # 8️⃣ Genera report HTML
-      - name: Generate HTML report
-        run: npx marge cypress/reports/report.json -f report -o cypress/reports/html
-
-      # 9️⃣ Upload report come artefatto
-      - name: Upload report artifact
-        uses: actions/upload-artifact@v4
+      # 5️⃣ Upload HTML Report
+      - name: Upload HTML Report
+        uses: actions/upload-artifact@v3
         with:
           name: mochawesome-report
-          path: cypress/reports/html
+          path: cypress/reports/html/report.html

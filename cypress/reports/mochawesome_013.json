@@ -1,14 +1,14 @@
 {
   "stats": {
     "suites": 1,
-    "tests": 2,
-    "passes": 2,
+    "tests": 1,
+    "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2025-11-26T12:06:54.754Z",
-    "end": "2025-11-26T12:07:01.969Z",
-    "duration": 7215,
-    "testsRegistered": 2,
+    "start": "2025-11-26T16:10:47.981Z",
+    "end": "2025-11-26T16:10:52.629Z",
+    "duration": 4648,
+    "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
     "other": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "4c6c388e-b6fc-4be9-9c88-87aff5a60728",
+      "uuid": "ca8948c7-5025-42e0-bf0c-cf1c4f21166c",
       "title": "",
       "fullFile": "cypress\\e2e\\real_sites\\02_product.cy.js",
       "file": "cypress\\e2e\\real_sites\\02_product.cy.js",
@@ -27,8 +27,8 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "40a127e1-5631-41ef-8070-56eef30dbff5",
-          "title": "Product Page Tests",
+          "uuid": "dddcf465-e808-4790-a4b1-6c56a3b00543",
+          "title": "Product Page Tests - SauceDemo",
           "fullFile": "",
           "file": "",
           "beforeHooks": [],
@@ -36,50 +36,31 @@
           "tests": [
             {
               "title": "should display product titles",
-              "fullTitle": "Product Page Tests should display product titles",
+              "fullTitle": "Product Page Tests - SauceDemo should display product titles",
               "timedOut": null,
-              "duration": 2917,
+              "duration": 4498,
               "state": "passed",
               "speed": "fast",
               "pass": true,
               "fail": false,
               "pending": false,
               "context": null,
-              "code": "// Assert: at least one product is visible\n_productsPage.default.productTitle().should('have.length.greaterThan', 0);",
+              "code": "cy.get('.inventory_item_name').should('have.length.greaterThan', 0);",
               "err": {},
-              "uuid": "3f4eb627-eff6-46d7-8133-1e4dd6e7976b",
-              "parentUUID": "40a127e1-5631-41ef-8070-56eef30dbff5",
-              "isHook": false,
-              "skipped": false
-            },
-            {
-              "title": "should add a product to the cart",
-              "fullTitle": "Product Page Tests should add a product to the cart",
-              "timedOut": null,
-              "duration": 1314,
-              "state": "passed",
-              "speed": "fast",
-              "pass": true,
-              "fail": false,
-              "pending": false,
-              "context": null,
-              "code": "// Act: add first product to cart\n_productsPage.default.productTitle().first().then($el => {\n  const productName = $el.text();\n  _productsPage.default.addProductToCart(productName);\n  // Assert: cart badge shows 1\n  _productsPage.default.shoppingCartLink().should('contain.text', '1');\n});",
-              "err": {},
-              "uuid": "9fcd785d-b043-4f68-93f9-2f68eec38b32",
-              "parentUUID": "40a127e1-5631-41ef-8070-56eef30dbff5",
+              "uuid": "7f3779fd-1954-4f11-83cb-2085729f867b",
+              "parentUUID": "dddcf465-e808-4790-a4b1-6c56a3b00543",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "3f4eb627-eff6-46d7-8133-1e4dd6e7976b",
-            "9fcd785d-b043-4f68-93f9-2f68eec38b32"
+            "7f3779fd-1954-4f11-83cb-2085729f867b"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 4231,
+          "duration": 4498,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
