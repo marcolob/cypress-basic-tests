@@ -36,27 +36,35 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      # 5️⃣ Run Cypress tests with Mochawesome
+      # 5️⃣ Run Cypress tests con reporter Mochawesome
       - name: Run Cypress tests
         run: npx cypress run --headless --reporter mochawesome --reporter-options "reportDir=cypress/reports,overwrite=false,html=false,json=true"
 
-      # 6️⃣ Merge mochawesome JSON
+      # 6️⃣ Debug: controlla che i JSON siano stati generati
+      - name: Check Cypress report folder
+        run: |
+          echo "=== Reports generated ==="
+          ls -l cypress/reports || echo "Reports folder missing"
+          echo "=== JSON files ==="
+          ls -l cypress/reports/mochawesome_*.json || echo "NO JSON FILES FOUND"
+
+      # 7️⃣ Merge dei JSON
       - name: Merge Mochawesome JSON
         run: |
-          mkdir -p cypress/reports/merged
-          npx mochawesome-merge cypress/reports/*.json > cypress/reports/merged/report.json
+          JSON_COUNT=$(ls cypress/reports/mochawesome_*.json 2>/dev/null | wc -l)
+          if [ "$JSON_COUNT" -eq "0" ]; then
+            echo "❌ No JSON files found. Cannot merge."
+            exit 1
+          fi
+          npx mochawesome-merge cypress/reports/mochawesome_*.json > reports/report.json
 
-      # 7️⃣ Generate HTML report (full assets)
+      # 8️⃣ Genera report HTML nella root reports/
       - name: Generate HTML report
-        run: |
-          npx marge cypress/reports/merged/report.json -o cypress/reports/merged
+        run: npx marge reports/report.json -f report -o reports
 
-      # 8️⃣ Upload FULL reports
+      # 9️⃣ Upload report come artefatto
       - name: Upload report artifact
         uses: actions/upload-artifact@v4
         with:
           name: mochawesome-report
-          path: |
-            cypress/reports
-            cypress/screenshots
-            cypress/videos
+          path: reports
