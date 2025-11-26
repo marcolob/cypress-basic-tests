@@ -6,13 +6,12 @@ E2E Testing • UI Automation • Page Object Model
 
 ## 📌 Overview
 
-This repository contains a Cypress automation project showcasing practical QA Automation skills, including:
-
-- Local UI tests using HTML fixtures
-- Real website E2E test flows (SauceDemo)
-- Page Object Model structure
-- Clean test organization for scalability
-- CI-ready structure (GitHub Actions integration)
+This repository contains a Cypress automation project showcasing practical QA Automation skills, including:  
+- Local UI tests using HTML fixtures  
+- Real website E2E test flows (SauceDemo)  
+- Page Object Model structure  
+- Clean test organization for scalability  
+- CI-ready structure (GitHub Actions integration)  
 
 The project is designed to represent the skillset expected from a **Junior / Junior-Mid QA Automation Engineer**.
 
@@ -20,10 +19,10 @@ The project is designed to represent the skillset expected from a **Junior / Jun
 
 ## 🛠️ Tech Stack
 
-- **Cypress 15+**
-- **JavaScript (Node.js 22+)**
-- **npm**
-- **Mochawesome Reporter** (HTML + JSON reports)
+- **Cypress 15+**  
+- **JavaScript (Node.js 22+)**  
+- **npm**  
+- **Mochawesome Reporter** (HTML + JSON reports)  
 - **GitHub Actions CI/CD** (in progress)
 
 ---
@@ -39,98 +38,66 @@ All critical flows on SauceDemo and local HTML fixtures are working.
 
 ---
 
-📁 Project Structure
+## 📁 Project Structure
 
-cypress/
-├─ e2e/
-│ ├─ basics/ # Local UI tests (HTML fixtures)
-│ ├─ real_site/ # Real website E2E tests (SauceDemo)
-│ ├─ smoke/ # Fast, critical-path tests (to be added)
-│ └─ regression/ # Full regression suite (to be added)
-│
-├─ fixtures/ # Local HTML + JSON test data
-├─ pages/ # Page Object Model (POM)
-├─ support/ # Custom commands & global hooks
-├─ reports/ # Mochawesome JSON + HTML reports
-├─ cypress.config.js
+cypress/  
+├─ e2e/  
+│ ├─ basics/ # Local UI tests (HTML fixtures)  
+│ ├─ real_site/ # Real website E2E tests (SauceDemo)  
+│ ├─ smoke/ # Fast, critical-path tests (to be added)  
+│ └─ regression/ # Full regression suite (to be added)  
+├─ fixtures/ # Local HTML + JSON test data  
+├─ pages/ # Page Object Model (POM)  
+├─ support/ # Custom commands & global hooks  
+├─ reports/ # Mochawesome HTML + JSON reports  
+├─ cypress.config.js  
 └─ package.json
-
----
-
 
 ---
 
 ## 📌 Folder Description
 
-### 🧪 **basics/**
-Local UI interaction tests for core Cypress skills:
+### 🧪 **basics/**  
+Local UI interaction tests for core Cypress skills: form validation, inputs, dropdowns, radio buttons, checkboxes, link navigation; useful for selectors, command chaining, assertions, and UI behavior.
 
-- Form validation, inputs, dropdowns, radio buttons, checkboxes  
-- Link navigation  
-- Useful for selectors, command chaining, assertions, and UI behavior
+### 🌐 **real_site/**  
+Full E2E test flow on **SauceDemo**: login workflow, product listing validation, add-to-cart flow, multi-page user journey, UI assertions across pages.
 
-### 🌐 **real_site/**
-Full E2E test flow on **SauceDemo**:
+### 🏗️ **pages/**  
+Page Object Model (POM): centralized locators, reusable UI actions, cleaner test files, easier maintainability.
 
-- Login workflow
-- Product listing validation
-- Add-to-cart flow
-- Multi-page user journey
-- UI assertions across pages
+### 🔥 **smoke/**  
+(To be added) Fast, critical-path tests for quick build verification.
 
-### 🏗️ **pages/**
-Page Object Model (POM):
+### 🔄 **regression/**  
+(To be added) Full regression suite to validate complete product functionality.
 
-- Centralized locators
-- Reusable UI actions
-- Cleaner test files
-- Easier maintainability
-
-### 🔥 **smoke/**
-(To be added)  
-Fast, critical-path tests for quick build verification.
-
-### 🔄 **regression/**
-(To be added)  
-Full regression suite to validate complete product functionality.
-
-### 📦 **fixtures/**
+### 📦 **fixtures/**  
 Local HTML files and JSON data for the basics tests.
 
-### 🧰 **support/**
-Global setup:
-
-- Reusable Cypress commands
-- Before/after hooks
-- Shared utilities for test stability
+### 🧰 **support/**  
+Global setup: reusable Cypress commands, before/after hooks, shared utilities for test stability.
 
 ---
 
 ## ⚡ How to Run Tests
 
-### Open Cypress GUI (interactive mode)
+Open Cypress GUI (interactive mode):  
+`npm run cypress:open`  
 
-```bash
-npm run cypress:open
-Run all tests headless
+Run all tests headless:  
+`npm run cypress:run`  
 
-npm run cypress:run
-Run a specific spec
+Run a specific spec:  
+`npx cypress run --spec "cypress/e2e/login/login.cy.js"`  
 
-npx cypress run --spec "cypress/e2e/login/login.cy.js"
-
-Reports
-HTML and JSON reports are automatically generated in:
-
-cypress/reports/
-cypress/screenshots/**/*.png
+Reports: HTML and JSON reports are automatically generated in `cypress/reports/` and screenshots in `cypress/screenshots/**/*.png`.
 
 ---
 
-# 📬 Contact
+## 📬 Contact
 
-📧 Email: m.lobianco@hotmail.it
-
-🔗 LinkedIn: linkedin.com/in/marco-lo-bianco-869311b1
+**Email:** **m.lobianco@hotmail.it**  
+**LinkedIn:** **[linkedin.com/in/marco-lo-bianco-869311b1](https://linkedin.com/in/marco-lo-bianco-869311b1)**  
 
 Open to collaboration, learning opportunities, and QA Automation roles.
