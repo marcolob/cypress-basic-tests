@@ -1,0 +1,109 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2025-11-28T15:21:02.133Z",
+    "end": "2025-11-28T15:21:07.821Z",
+    "duration": 5688,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "ef73ee72-3911-4872-a680-7a0671720878",
+      "title": "",
+      "fullFile": "cypress\\e2e\\smoke\\05_form_realsite.cy.js",
+      "file": "cypress\\e2e\\smoke\\05_form_realsite.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "f6528d3c-f285-4f52-9e6f-6ed35e943b38",
+          "title": "Form Smoke Test - DemoQA",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Fill and submit the form",
+              "fullTitle": "Form Smoke Test - DemoQA Fill and submit the form",
+              "timedOut": null,
+              "duration": 3196,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "// Inserisci dati nel form\ncy.get('#userName').type('Marco Rossi');\ncy.get('#userEmail').type('marco@example.com');\ncy.get('#currentAddress').type('Via Roma 1, Milano');\ncy.get('#permanentAddress').type('Via Milano 2, Milano');\n// Clicca submit\ncy.get('#submit').click({\n  force: true\n});\n// Verifica che i dati inseriti siano mostrati nella sezione output\ncy.get('#output #name').should('contain.text', 'Marco Rossi');\ncy.get('#output #email').should('contain.text', 'marco@example.com');\ncy.get('#output #currentAddress').should('contain.text', 'Via Roma 1, Milano');\ncy.get('#output #permanentAddress').should('contain.text', 'Via Milano 2, Milano');",
+              "err": {
+                "message": "Error: The following error originated from your application code, not from Cypress.\n\n  > Script error.\n\nCypress detected that an uncaught error was thrown from a cross origin script.\n\nWe cannot provide you the stack trace, line number, or file where this error occurred.\n\nCheck your Developer Tools Console for the actual error - it should be printed there.\n\nIt's possible to enable debugging these scripts by adding the `crossorigin` attribute and setting a CORS header.\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the `uncaught:exception` event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n\nhttps://on.cypress.io/cross-origin-script-error\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `Form Smoke Test - DemoQA`",
+                "estack": "Error: The following error originated from your application code, not from Cypress.\n\n  > Script error.\n\nCypress detected that an uncaught error was thrown from a cross origin script.\n\nWe cannot provide you the stack trace, line number, or file where this error occurred.\n\nCheck your Developer Tools Console for the actual error - it should be printed there.\n\nIt's possible to enable debugging these scripts by adding the `crossorigin` attribute and setting a CORS header.\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the `uncaught:exception` event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n\nhttps://on.cypress.io/cross-origin-script-error\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `Form Smoke Test - DemoQA`",
+                "diff": null
+              },
+              "uuid": "55aaf1da-0cf1-4e14-b640-8cde55fe9210",
+              "parentUUID": "f6528d3c-f285-4f52-9e6f-6ed35e943b38",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "55aaf1da-0cf1-4e14-b640-8cde55fe9210"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 3196,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}

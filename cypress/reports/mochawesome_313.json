@@ -1,0 +1,105 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-11-28T16:25:56.404Z",
+    "end": "2025-11-28T16:26:00.611Z",
+    "duration": 4207,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "4b6df333-443e-4655-9b5f-63e111fb7b75",
+      "title": "",
+      "fullFile": "cypress\\e2e\\basics\\hello.cy.js",
+      "file": "cypress\\e2e\\basics\\hello.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "af591a2d-43cf-4647-9791-f4fd4f6ff368",
+          "title": "Hello World Test - Google",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should visit Google and verify the page title",
+              "fullTitle": "Hello World Test - Google should visit Google and verify the page title",
+              "timedOut": null,
+              "duration": 1985,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// 🔹 Visita il sito\ncy.visit('https://www.google.com');\n// 🔹 Verifica che il titolo contenga \"Google\"\ncy.title().should('include', 'Google');",
+              "err": {},
+              "uuid": "ec24c947-d48e-4ac7-8059-1dd3dee8d1ca",
+              "parentUUID": "af591a2d-43cf-4647-9791-f4fd4f6ff368",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "ec24c947-d48e-4ac7-8059-1dd3dee8d1ca"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1985,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}

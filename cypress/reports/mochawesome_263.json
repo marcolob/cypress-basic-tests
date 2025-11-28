@@ -1,0 +1,105 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-11-28T15:59:16.861Z",
+    "end": "2025-11-28T15:59:19.087Z",
+    "duration": 2226,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "bae80eb5-163f-40c6-9bb4-623231aec9bd",
+      "title": "",
+      "fullFile": "cypress\\e2e\\basics\\checkbox.cy.js",
+      "file": "cypress\\e2e\\basics\\checkbox.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "6a12bed8-5a82-4581-a857-b58b403f7228",
+          "title": "Product Sorting - Price Low to High (PO Example)",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should correctly show lowest price first when sorting Low → High",
+              "fullTitle": "Product Sorting - Price Low to High (PO Example) should correctly show lowest price first when sorting Low → High",
+              "timedOut": null,
+              "duration": 2130,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// 🔹 Selezione filtro dal dropdown\n_ProductsPage.default.selectSortOption('lohi');\n// 🔹 Verifica: il primo prodotto deve essere quello da $7.99\n_ProductsPage.default.productPrice().first().should('contain', '7.99');\n// 🔹 Verifica opzionale: titolo del prodotto\n_ProductsPage.default.productTitle().first().should('contain', 'Sauce Labs Onesie');",
+              "err": {},
+              "uuid": "6454b8f8-25c8-4509-91e6-7b1d3d0e8262",
+              "parentUUID": "6a12bed8-5a82-4581-a857-b58b403f7228",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "6454b8f8-25c8-4509-91e6-7b1d3d0e8262"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 2130,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}

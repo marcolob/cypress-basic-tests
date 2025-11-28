@@ -1,0 +1,143 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-11-28T16:26:55.800Z",
+    "end": "2025-11-28T16:27:00.952Z",
+    "duration": 5152,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "ab12a82f-ff96-4aa8-9955-9d5eaad7c6d8",
+      "title": "",
+      "fullFile": "cypress\\e2e\\cart\\cart_remove_multiple_products.cy.js",
+      "file": "cypress\\e2e\\cart\\cart_remove_multiple_products.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "d3fdb38a-018c-46da-b26c-2931da13c1c6",
+          "title": "Cart — Remove Multiple Products",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should remove two products using index",
+              "fullTitle": "Cart — Remove Multiple Products should remove two products using index",
+              "timedOut": null,
+              "duration": 2042,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Aggiungo 3 prodotti\n_CartPage.default.addProductByIndex(0);\n_CartPage.default.addProductByIndex(1);\n_CartPage.default.addProductByIndex(2);\n// Apro il carrello\n_CartPage.default.openCart();\n// Rimuovo il primo e il secondo prodotto (indice 0 e 1)\n_CartPage.default.removeProductByIndex(0);\n_CartPage.default.removeProductByIndex(1);\n// Verifico che rimanga solo 1 prodotto\n_CartPage.default.getCartItemCount().should('have.length', 1);\n// Verifico badge\n_CartPage.default.getCartCount().should('have.text', '1');",
+              "err": {},
+              "uuid": "c26f30ba-2dbb-4d94-b173-ab64de5ae16d",
+              "parentUUID": "d3fdb38a-018c-46da-b26c-2931da13c1c6",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should remove two specific products by name",
+              "fullTitle": "Cart — Remove Multiple Products should remove two specific products by name",
+              "timedOut": null,
+              "duration": 1491,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Aggiungo i prodotti specifici\n_CartPage.default.addProductByDataTest('add-to-cart-sauce-labs-backpack');\n_CartPage.default.addProductByDataTest('add-to-cart-sauce-labs-bike-light');\n// Apro il carrello\n_CartPage.default.openCart();\n// Assicuro che i prodotti siano presenti prima di rimuovere\n_CartPage.default.cartItemNames.contains('Sauce Labs Backpack').should('exist');\n_CartPage.default.cartItemNames.contains('Sauce Labs Bike Light').should('exist');\n// Rimuovo i prodotti per nome\n_CartPage.default.removeProductByName('Sauce Labs Backpack');\n_CartPage.default.removeProductByName('Sauce Labs Bike Light');\n// Verifico che il carrello sia vuoto\n_CartPage.default.getCartItemCount().should('have.length', 0);\n_CartPage.default.getCartCount().should('not.exist');",
+              "err": {},
+              "uuid": "ea113710-07a4-4543-82ec-104f925a2921",
+              "parentUUID": "d3fdb38a-018c-46da-b26c-2931da13c1c6",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should remove all products using removeAllProducts()",
+              "fullTitle": "Cart — Remove Multiple Products should remove all products using removeAllProducts()",
+              "timedOut": null,
+              "duration": 1489,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Aggiungo 3 prodotti\n_CartPage.default.addProductByIndex(0);\n_CartPage.default.addProductByIndex(1);\n_CartPage.default.addProductByIndex(2);\n// Apro il carrello\n_CartPage.default.openCart();\n// Rimuovo tutti i prodotti\n_CartPage.default.removeAllProducts();\n// Verifico carrello vuoto\n_CartPage.default.getCartItemCount().should('have.length', 0);\n_CartPage.default.getCartCount().should('not.exist');",
+              "err": {},
+              "uuid": "e7092d65-664e-4c08-afd8-e4c77e089365",
+              "parentUUID": "d3fdb38a-018c-46da-b26c-2931da13c1c6",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "c26f30ba-2dbb-4d94-b173-ab64de5ae16d",
+            "ea113710-07a4-4543-82ec-104f925a2921",
+            "e7092d65-664e-4c08-afd8-e4c77e089365"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 5022,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}

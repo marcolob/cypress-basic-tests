@@ -1,0 +1,129 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2025-11-28T12:43:48.097Z",
+    "end": "2025-11-28T12:43:48.844Z",
+    "duration": 747,
+    "testsRegistered": 2,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 1,
+    "hasSkipped": true
+  },
+  "results": [
+    {
+      "uuid": "0523c6dd-f988-45be-8615-7d13999ae150",
+      "title": "",
+      "fullFile": "cypress\\e2e\\forms\\form_edge.cy.js",
+      "file": "cypress\\e2e\\forms\\form_edge.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "d569dd51-37d6-43dc-8c04-6e451920c996",
+          "title": "Form Edge Cases - SauceDemo",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should show errors for empty required fields",
+              "fullTitle": "Form Edge Cases - SauceDemo should show errors for empty required fields",
+              "timedOut": null,
+              "duration": 559,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "// 🔹 Invio del form senza compilare i campi\n_FormPage.default.submitButton.click();\n// 🔹 Verifica che appaiano i messaggi di errore per campi obbligatori\ncy.get('#name-error').should('be.visible').and('contain.text', 'Name is required');\ncy.get('#email-error').should('be.visible').and('contain.text', 'Email is required');",
+              "err": {
+                "message": "CypressError: `cy.visit()` failed trying to load:\n\nhttps://www.saucedemo.com/form\n\nThe response we received from your web server was:\n\n  > 404: Not Found\n\nThis was considered a failure because the status code was not `2xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `Form Edge Cases - SauceDemo`",
+                "estack": "CypressError: `cy.visit()` failed trying to load:\n\nhttps://www.saucedemo.com/form\n\nThe response we received from your web server was:\n\n  > 404: Not Found\n\nThis was considered a failure because the status code was not `2xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `Form Edge Cases - SauceDemo`\n    at <unknown> (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:134982:76)\n    at visitFailedByErr (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:134552:12)\n    at <unknown> (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:134965:13)\n    at tryCatcher (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1546:18)\n    at Promise._settlePromise0 (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1591:10)\n    at Promise._settlePromises (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1667:18)\n    at _drainQueueStep (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:2377:12)\n    at _drainQueue (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:2370:9)\n    at Async._drainQueues (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:2386:5)\n    at Async.drainQueues (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:2256:14)\nFrom Your Spec Code:\n    at Context.eval (webpack://cypressclean/./cypress/e2e/forms/form_edge.cy.js:7:7)",
+                "diff": null
+              },
+              "uuid": "bb6b8787-8d9c-4c5e-9520-7cf53c05d395",
+              "parentUUID": "d569dd51-37d6-43dc-8c04-6e451920c996",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should show error for invalid email format",
+              "fullTitle": "Form Edge Cases - SauceDemo should show error for invalid email format",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// 🔹 Inserimento dati parziali/errati\n_FormPage.default.nameInput.type('Marco');\n_FormPage.default.emailInput.type('email-non-valida');\n// 🔹 Invio form\n_FormPage.default.submitButton.click();\n// 🔹 Verifica messaggio di errore per email non valida\ncy.get('#email-error').should('be.visible').and('contain.text', 'Invalid email format');",
+              "err": {},
+              "uuid": "6857de68-50c0-418c-842d-a2290d08710b",
+              "parentUUID": "d569dd51-37d6-43dc-8c04-6e451920c996",
+              "isHook": false,
+              "skipped": true
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "bb6b8787-8d9c-4c5e-9520-7cf53c05d395"
+          ],
+          "pending": [],
+          "skipped": [
+            "6857de68-50c0-418c-842d-a2290d08710b"
+          ],
+          "duration": 559,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-11-28T16:27:42.244Z",
+    "end": "2025-11-28T16:27:44.192Z",
+    "duration": 1948,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "c00f1cbd-2135-49ea-a16c-634ac27e93d7",
+      "title": "",
+      "fullFile": "cypress\\e2e\\smoke\\02_product_realsite.cy.js",
+      "file": "cypress\\e2e\\smoke\\02_product_realsite.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "015ed26d-b2d1-49a6-b4b1-7897835993e7",
+          "title": "Add to Cart / Product Smoke Test - SauceDemo",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Add specific products to cart and verify cart badge",
+              "fullTitle": "Add to Cart / Product Smoke Test - SauceDemo Add specific products to cart and verify cart badge",
+              "timedOut": null,
+              "duration": 1879,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Add products using data-test\n_CartPage.default.addProductByDataTest('add-to-cart-sauce-labs-backpack');\n_CartPage.default.addProductByDataTest('add-to-cart-sauce-labs-bike-light');\n// Check cart badge\n_CartPage.default.getCartCount().should('contain.text', '2');\n// Open cart\n_CartPage.default.openCart();\n// Verify products in the cart\n_CartPage.default.getItemNames().then(names => {\n  expect(names).to.include.members(['Sauce Labs Backpack', 'Sauce Labs Bike Light']);\n  expect(names).to.have.length(2);\n});",
+              "err": {},
+              "uuid": "4f2bf82b-1051-4103-99fa-0a677155d5a1",
+              "parentUUID": "015ed26d-b2d1-49a6-b4b1-7897835993e7",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "4f2bf82b-1051-4103-99fa-0a677155d5a1"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1879,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}

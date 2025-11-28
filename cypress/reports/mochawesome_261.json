@@ -1,0 +1,124 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-11-28T15:59:11.933Z",
+    "end": "2025-11-28T15:59:12.556Z",
+    "duration": 623,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "53142d0b-e022-497a-a73f-7540dc9b1d4a",
+      "title": "",
+      "fullFile": "cypress\\e2e\\api\\api_negative.cy.js",
+      "file": "cypress\\e2e\\api\\api_negative.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "a2e681c6-6e74-4b3e-a866-c96b04bf9dd5",
+          "title": "API Negative Tests",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "GET - 404 Not Found",
+              "fullTitle": "API Negative Tests GET - 404 Not Found",
+              "timedOut": null,
+              "duration": 413,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.request({\n  url: 'https://jsonplaceholder.typicode.com/postssss',\n  failOnStatusCode: false // importante per testare i codici di errore\n}).then(response => {\n  expect(response.status).to.eq(404);\n});",
+              "err": {},
+              "uuid": "d218dc0a-5556-4fcb-aa11-f3e908fc95fb",
+              "parentUUID": "a2e681c6-6e74-4b3e-a866-c96b04bf9dd5",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "POST - Body mancante",
+              "fullTitle": "API Negative Tests POST - Body mancante",
+              "timedOut": null,
+              "duration": 157,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.request({\n  method: 'POST',\n  url: 'https://jsonplaceholder.typicode.com/posts',\n  failOnStatusCode: false,\n  body: {}\n}).then(response => {\n  expect(response.status).to.be.oneOf([400, 201]);\n  // dipende da JSONPlaceholder, normalmente risponde 201\n});",
+              "err": {},
+              "uuid": "854875b1-37e6-48a4-a2e1-33eb71a601f9",
+              "parentUUID": "a2e681c6-6e74-4b3e-a866-c96b04bf9dd5",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "d218dc0a-5556-4fcb-aa11-f3e908fc95fb",
+            "854875b1-37e6-48a4-a2e1-33eb71a601f9"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 570,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}

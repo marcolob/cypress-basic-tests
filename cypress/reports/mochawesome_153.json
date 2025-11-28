@@ -1,0 +1,105 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-11-28T12:42:28.305Z",
+    "end": "2025-11-28T12:42:31.510Z",
+    "duration": 3205,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "2238685a-683b-4966-9bcd-1543b31208b3",
+      "title": "",
+      "fullFile": "cypress\\e2e\\cart\\add_product_cart.cy.js",
+      "file": "cypress\\e2e\\cart\\add_product_cart.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "d902a6cc-5ee7-468b-a925-137d8cf14666",
+          "title": "Cart Tests - SauceDemo",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should add a product to the cart and update badge",
+              "fullTitle": "Cart Tests - SauceDemo should add a product to the cart and update badge",
+              "timedOut": null,
+              "duration": 3045,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Badge inizialmente non visibile\n_CartPage.default.getCartCount().should('not.exist');\n// Aggiungi il primo prodotto\n_CartPage.default.addFirstProductToCart();\n// Badge dovrebbe apparire con numero 1\n_CartPage.default.getCartCount().should('be.visible').and('contain.text', '1');",
+              "err": {},
+              "uuid": "4c8cc0ec-f980-4068-ad9d-e5dc932b46da",
+              "parentUUID": "d902a6cc-5ee7-468b-a925-137d8cf14666",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "4c8cc0ec-f980-4068-ad9d-e5dc932b46da"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 3045,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}

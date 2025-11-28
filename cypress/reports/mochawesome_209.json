@@ -1,0 +1,105 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-11-28T13:33:30.377Z",
+    "end": "2025-11-28T13:33:33.308Z",
+    "duration": 2931,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "2e3a28e3-3a95-4d9b-88e7-0a53f76031bc",
+      "title": "",
+      "fullFile": "cypress\\e2e\\smoke\\07_dropdown_realsite.cy.js",
+      "file": "cypress\\e2e\\smoke\\07_dropdown_realsite.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "0f8c55fd-b5fc-4acf-889c-22a4880e00b8",
+          "title": "Product Filter Dropdown - Smoke Test",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Dovrebbe selezionare il filtro \"Price (low to high)\" e controllare il primo prezzo",
+              "fullTitle": "Product Filter Dropdown - Smoke Test Dovrebbe selezionare il filtro \"Price (low to high)\" e controllare il primo prezzo",
+              "timedOut": null,
+              "duration": 2670,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Seleziona opzione nel dropdown usando Page Object\n_ProductsPage.default.selectSortOption('lohi');\n// Controllo che il primo prezzo sia il più basso\n_ProductsPage.default.productPrice().first().should('contain.text', '7.99');",
+              "err": {},
+              "uuid": "dc8b946b-d86b-42b4-8576-8a9719e32f82",
+              "parentUUID": "0f8c55fd-b5fc-4acf-889c-22a4880e00b8",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "dc8b946b-d86b-42b4-8576-8a9719e32f82"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 2670,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}

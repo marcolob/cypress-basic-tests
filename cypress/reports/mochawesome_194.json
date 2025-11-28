@@ -1,0 +1,109 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2025-11-28T13:31:14.651Z",
+    "end": "2025-11-28T13:31:17.689Z",
+    "duration": 3038,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "575e9687-9449-4bc6-b8bd-95add3e912b4",
+      "title": "",
+      "fullFile": "cypress\\e2e\\cart\\cart_edge_case.cy.js",
+      "file": "cypress\\e2e\\cart\\cart_edge_case.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "ff7009b0-05e4-4fd9-a55e-651ca6c27a95",
+          "title": "Cart Edge Case - Aggiunta e rimozione rapida",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Gestisce aggiunta e rimozione rapida dello stesso prodotto",
+              "fullTitle": "Cart Edge Case - Aggiunta e rimozione rapida Gestisce aggiunta e rimozione rapida dello stesso prodotto",
+              "timedOut": null,
+              "duration": 2956,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "// Seleziona il primo prodotto\n_productsPage.default.getProductByIndex(0).within(() => {\n  // Aggiunge il prodotto\n  cy.get('.btn_inventory').click();\n  // Rimuove immediatamente\n  cy.get('.btn_inventory').click();\n  // Riprova ad aggiungerlo rapidamente\n  cy.get('.btn_inventory').click();\n});\n// Verifica che il badge sia aggiornato correttamente\n_CartPage.default.cartBadge.should('be.visible').and('contain', '1');\n// Entra nel carrello\n_CartPage.default.openCart();\n// Verifica che sia presente solo 1 prodotto\ncy.get('.cart_item').should('have.length', 1);",
+              "err": {
+                "message": "TypeError: _productsPage.default.getProductByIndex is not a function",
+                "estack": "TypeError: _productsPage.default.getProductByIndex is not a function\n    at Context.eval (webpack://cypressclean/./cypress/e2e/cart/cart_edge_case.cy.js:16:17)\n    at runnable.fn (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:141800:19)\n    at callFn (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:160869:21)\n    at Runnable.run (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:160856:7)\n    at <unknown> (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:166951:30)\n    at PassThroughHandlerContext.finallyHandler (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:4042:23)\n    at PassThroughHandlerContext.tryCatcher (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1546:18)",
+                "diff": null
+              },
+              "uuid": "7ef1a8c6-20a3-47bb-85f1-c2b9eb043a92",
+              "parentUUID": "ff7009b0-05e4-4fd9-a55e-651ca6c27a95",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "7ef1a8c6-20a3-47bb-85f1-c2b9eb043a92"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 2956,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-11-27T16:11:40.130Z",
+    "end": "2025-11-27T16:11:42.148Z",
+    "duration": 2018,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "b420b906-cb4d-4cad-9018-9962f5c8fde1",
+      "title": "",
+      "fullFile": "cypress\\e2e\\real_sites\\01_homepage.cy.js",
+      "file": "cypress\\e2e\\real_sites\\01_homepage.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "a583f884-6303-4d6c-8ff4-c11f69517dbc",
+          "title": "Homepage Tests - SauceDemo",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should display login form correctly",
+              "fullTitle": "Homepage Tests - SauceDemo should display login form correctly",
+              "timedOut": null,
+              "duration": 1918,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('[data-test=username]').should('be.visible');\ncy.get('[data-test=password]').should('be.visible');\ncy.get('[data-test=login-button]').should('be.visible');",
+              "err": {},
+              "uuid": "5bd41f27-8eaa-4b2f-a342-cfa21b28de24",
+              "parentUUID": "a583f884-6303-4d6c-8ff4-c11f69517dbc",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "5bd41f27-8eaa-4b2f-a342-cfa21b28de24"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1918,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}

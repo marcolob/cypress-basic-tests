@@ -1,0 +1,109 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2025-11-28T15:34:40.542Z",
+    "end": "2025-11-28T15:34:48.156Z",
+    "duration": 7614,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "c27d4096-efb8-44b6-b682-7b824c8c6e2e",
+      "title": "",
+      "fullFile": "cypress\\e2e\\smoke\\05_form_realsite.cy.js",
+      "file": "cypress\\e2e\\smoke\\05_form_realsite.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "bc6e8661-55d9-44d1-83a6-342bcd0d3184",
+          "title": "Form Smoke Test - DemoQA",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Fill and submit the form",
+              "fullTitle": "Form Smoke Test - DemoQA Fill and submit the form",
+              "timedOut": null,
+              "duration": 7526,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "// Gestione cross-origin con cy.origin\ncy.origin('https://demoqa.com', () => {\n  // Visita la pagina del form DemoQA\n  cy.visit('/text-box');\n  // Compila il form\n  cy.get('#userName').type('Marco');\n  cy.get('#userEmail').type('marco@example.com');\n  cy.get('#currentAddress').type('Via Roma 1');\n  cy.get('#permanentAddress').type('Via Milano 2');\n  // Submit del form\n  cy.get('#submit').click();\n  // Verifica che il nome inserito appaia nella conferma\n  cy.get('#output #name').should('contain.text', 'Marco');\n});",
+              "err": {
+                "message": "Error: The following error originated from your application code, not from Cypress.\n\n  > Script error.\n\nCypress detected that an uncaught error was thrown from a cross origin script.\n\nWe cannot provide you the stack trace, line number, or file where this error occurred.\n\nCheck your Developer Tools Console for the actual error - it should be printed there.\n\nIt's possible to enable debugging these scripts by adding the `crossorigin` attribute and setting a CORS header.\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the `uncaught:exception` event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n\nhttps://on.cypress.io/cross-origin-script-error",
+                "estack": "Error: The following error originated from your application code, not from Cypress.\n\n  > Script error.\n\nCypress detected that an uncaught error was thrown from a cross origin script.\n\nWe cannot provide you the stack trace, line number, or file where this error occurred.\n\nCheck your Developer Tools Console for the actual error - it should be printed there.\n\nIt's possible to enable debugging these scripts by adding the `crossorigin` attribute and setting a CORS header.\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the `uncaught:exception` event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n\nhttps://on.cypress.io/cross-origin-script-error\n    at Context.eval (webpack://cypressclean/./cypress/e2e/smoke/05_form_realsite.cy.js:15:7)\n    at runnable.fn (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:141800:19)\n    at callFn (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:160869:21)\n    at Runnable.run (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:160856:7)\n    at <unknown> (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:166951:30)\n    at PassThroughHandlerContext.finallyHandler (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:4042:23)\n    at PassThroughHandlerContext.tryCatcher (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1489:31)",
+                "diff": null
+              },
+              "uuid": "075b3d7c-33df-4cc5-84cc-53700afeefbe",
+              "parentUUID": "bc6e8661-55d9-44d1-83a6-342bcd0d3184",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "075b3d7c-33df-4cc5-84cc-53700afeefbe"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 7526,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}

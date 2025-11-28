@@ -1,0 +1,129 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2025-11-28T14:54:14.453Z",
+    "end": "2025-11-28T14:54:15.435Z",
+    "duration": 982,
+    "testsRegistered": 2,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 1,
+    "hasSkipped": true
+  },
+  "results": [
+    {
+      "uuid": "8a09b786-6a28-45f0-b1f9-62a088f4a6d7",
+      "title": "",
+      "fullFile": "cypress\\e2e\\smoke\\09_radio_realsite.cy.js",
+      "file": "cypress\\e2e\\smoke\\09_radio_realsite.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "3ab9a94a-19be-49a4-9a3b-83a7b458b960",
+          "title": "Radio Button Test - Selenium Easy",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Dovrebbe selezionare un radio button e verificare il messaggio",
+              "fullTitle": "Radio Button Test - Selenium Easy Dovrebbe selezionare un radio button e verificare il messaggio",
+              "timedOut": null,
+              "duration": 913,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "// Seleziona il radio button \"Female\"\ncy.get('input[name=\"optradio\"][value=\"Female\"]').check({\n  force: true\n});\n// Clicca sul bottone \"Get Checked value\"\ncy.get('#buttoncheck').click();\n// Controlla che il messaggio indichi correttamente \"Female\"\ncy.get('.radiobutton').should('contain.text', 'Female');",
+              "err": {
+                "message": "CypressError: `cy.visit()` failed trying to load:\n\nhttps://demo.seleniumeasy.com/basic-radiobutton-demo.html\n\nWe attempted to make an http request to this URL but the request failed without a response.\n\nWe received this error at the network level:\n\n  > Error: getaddrinfo ENOTFOUND demo.seleniumeasy.com\n\nCommon situations why this would fail:\n  - you don't have internet access\n  - you forgot to run / boot your web server\n  - your web server isn't accessible\n  - you have weird network configuration settings on your computer\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `Radio Button Test - Seleniu...`",
+                "estack": "CypressError: `cy.visit()` failed trying to load:\n\nhttps://demo.seleniumeasy.com/basic-radiobutton-demo.html\n\nWe attempted to make an http request to this URL but the request failed without a response.\n\nWe received this error at the network level:\n\n  > Error: getaddrinfo ENOTFOUND demo.seleniumeasy.com\n\nCommon situations why this would fail:\n  - you don't have internet access\n  - you forgot to run / boot your web server\n  - your web server isn't accessible\n  - you have weird network configuration settings on your computer\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `Radio Button Test - Seleniu...`\n    at <unknown> (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:134998:74)\n    at visitFailedByErr (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:134552:12)\n    at <unknown> (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:134997:11)\n    at tryCatcher (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1546:18)\n    at Promise._settlePromise0 (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1591:10)\n    at Promise._settlePromises (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1667:18)\n    at _drainQueueStep (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:2377:12)\n    at _drainQueue (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:2370:9)\n    at Async._drainQueues (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:2386:5)\n    at Async.drainQueues (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:2256:14)\nFrom Your Spec Code:\n    at Context.eval (webpack://cypressclean/./cypress/e2e/smoke/09_radio_realsite.cy.js:7:7)\n\nFrom Node.js Internals:\n  Error: getaddrinfo ENOTFOUND demo.seleniumeasy.com\n      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:122:26)",
+                "diff": null
+              },
+              "uuid": "5437503e-f791-4a40-8d92-4a995d27c34c",
+              "parentUUID": "3ab9a94a-19be-49a4-9a3b-83a7b458b960",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Dovrebbe selezionare il radio button \"Male\" e verificare il messaggio",
+              "fullTitle": "Radio Button Test - Selenium Easy Dovrebbe selezionare il radio button \"Male\" e verificare il messaggio",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Seleziona \"Male\"\ncy.get('input[name=\"optradio\"][value=\"Male\"]').check({\n  force: true\n});\n// Clicca sul bottone\ncy.get('#buttoncheck').click();\n// Verifica il messaggio\ncy.get('.radiobutton').should('contain.text', 'Male');",
+              "err": {},
+              "uuid": "458dfa36-7c58-4124-b588-bdfe9c02a7c7",
+              "parentUUID": "3ab9a94a-19be-49a4-9a3b-83a7b458b960",
+              "isHook": false,
+              "skipped": true
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "5437503e-f791-4a40-8d92-4a995d27c34c"
+          ],
+          "pending": [],
+          "skipped": [
+            "458dfa36-7c58-4124-b588-bdfe9c02a7c7"
+          ],
+          "duration": 913,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}

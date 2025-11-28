@@ -1,0 +1,109 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2025-11-28T13:33:01.931Z",
+    "end": "2025-11-28T13:33:06.513Z",
+    "duration": 4582,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "7a4a533e-318a-4139-8a40-e6cda10f7e25",
+      "title": "",
+      "fullFile": "cypress\\e2e\\smoke\\03_add_to_cart_realsite.cy.js",
+      "file": "cypress\\e2e\\smoke\\03_add_to_cart_realsite.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "7beda31f-0030-48c6-a7e4-0d93437597bf",
+          "title": "Add to Cart Flow - Smoke Test",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Dovrebbe aggiungere i primi 2 prodotti al carrello e verificare badge",
+              "fullTitle": "Add to Cart Flow - Smoke Test Dovrebbe aggiungere i primi 2 prodotti al carrello e verificare badge",
+              "timedOut": null,
+              "duration": 4491,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "// Aggiunge i primi 2 prodotti usando Page Object\n_ProductsPage.default.productTitle().each(($el, index) => {\n  if (index < 2) {\n    _CartPage.default.addProductByIndex(index);\n  }\n});\n// Controllo badge carrello\n_CartPage.default.getCartCount().should('contain.text', '2');\n// Controllo nomi prodotti nel carrello\n_CartPage.default.openCart();\n_CartPage.default.getItemNames().then(names => {\n  expect(names).to.include.members(['Sauce Labs Backpack', 'Sauce Labs Bike Light']);\n});",
+              "err": {
+                "message": "AssertionError: expected [ Array(2) ] to be a superset of [ Array(2) ]",
+                "estack": "AssertionError: expected [ Array(2) ] to be a superset of [ Array(2) ]\n    at Context.eval (webpack://cypressclean/./cypress/e2e/smoke/03_add_to_cart_realsite.cy.js:29:31)\n    at getRet (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:121565:20)\n    at tryCatcher (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:4285:29)\n    at Context.thenFn (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:121576:66)\n    at Context.then (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:121827:21)",
+                "diff": "- [ 'Sauce Labs Backpack', 'Sauce Labs Bolt T-Shirt' ]\n+ [ 'Sauce Labs Backpack', 'Sauce Labs Bike Light' ]\n"
+              },
+              "uuid": "725d128c-790d-4371-b632-1c7f35168e5e",
+              "parentUUID": "7beda31f-0030-48c6-a7e4-0d93437597bf",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "725d128c-790d-4371-b632-1c7f35168e5e"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 4491,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}

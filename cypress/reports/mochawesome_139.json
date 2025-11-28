@@ -1,0 +1,124 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-11-27T16:12:22.314Z",
+    "end": "2025-11-27T16:12:25.678Z",
+    "duration": 3364,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "7743cb50-db2e-4f0e-928e-0798ba682f63",
+      "title": "",
+      "fullFile": "cypress\\e2e\\regression\\regression.cy.js",
+      "file": "cypress\\e2e\\regression\\regression.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "0e471b04-8527-4d1b-963c-891ca067a71a",
+          "title": "Regression Login Test - SauceDemo",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should load login page correctly",
+              "fullTitle": "Regression Login Test - SauceDemo should load login page correctly",
+              "timedOut": null,
+              "duration": 1583,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('[data-test=username]').should('be.visible');\ncy.get('[data-test=password]').should('be.visible');",
+              "err": {},
+              "uuid": "e48f1176-dcd7-4cfa-b65d-9e40e3b2699f",
+              "parentUUID": "0e471b04-8527-4d1b-963c-891ca067a71a",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should show error for wrong credentials",
+              "fullTitle": "Regression Login Test - SauceDemo should show error for wrong credentials",
+              "timedOut": null,
+              "duration": 1441,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('[data-test=username]').type('wrong_user');\ncy.get('[data-test=password]').type('wrong_password');\ncy.get('[data-test=login-button]').click();\ncy.get('[data-test=error]').should('contain', 'Username and password do not match');",
+              "err": {},
+              "uuid": "444cffbf-5ea6-444c-b6b6-b7ef82612eaa",
+              "parentUUID": "0e471b04-8527-4d1b-963c-891ca067a71a",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "e48f1176-dcd7-4cfa-b65d-9e40e3b2699f",
+            "444cffbf-5ea6-444c-b6b6-b7ef82612eaa"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 3024,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}

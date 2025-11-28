@@ -1,0 +1,105 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-11-28T12:43:27.451Z",
+    "end": "2025-11-28T12:43:31.453Z",
+    "duration": 4002,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "0697c254-2e67-45a2-8715-9af667525e7d",
+      "title": "",
+      "fullFile": "cypress\\e2e\\cart\\cart_remove_single_product.cy.js",
+      "file": "cypress\\e2e\\cart\\cart_remove_single_product.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "20ea346b-97d1-49e3-81bf-2e70eb6edb4d",
+          "title": "Cart — Remove Products",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should remove the second product using index",
+              "fullTitle": "Cart — Remove Products should remove the second product using index",
+              "timedOut": null,
+              "duration": 3815,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Rimuovo il secondo prodotto (indice 1)\n_CartPage.default.removeProductByIndex(1);\n// Verifico che nel carrello siano rimasti 2 prodotti\ncy.get('.cart_item').should('have.length', 2);\n// Verifico che il badge sia aggiornato\n_CartPage.default.getCartCount().should('have.text', '2');",
+              "err": {},
+              "uuid": "bc97a2d3-7963-4f60-b661-df9fa92f5cf4",
+              "parentUUID": "20ea346b-97d1-49e3-81bf-2e70eb6edb4d",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "bc97a2d3-7963-4f60-b661-df9fa92f5cf4"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 3815,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}

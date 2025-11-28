@@ -1,0 +1,124 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-11-28T13:28:48.472Z",
+    "end": "2025-11-28T13:28:49.139Z",
+    "duration": 667,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "4342809c-2dee-4911-8f12-ef341b0f46ee",
+      "title": "",
+      "fullFile": "cypress\\e2e\\api\\api_get.cy.js",
+      "file": "cypress\\e2e\\api\\api_get.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "213d5889-073f-44f3-857d-6878d2219107",
+          "title": "API GET Tests",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "GET - Recupera lista di post e valida struttura",
+              "fullTitle": "API GET Tests GET - Recupera lista di post e valida struttura",
+              "timedOut": null,
+              "duration": 369,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.request('https://jsonplaceholder.typicode.com/posts').then(response => {\n  // Status code OK\n  expect(response.status).to.eq(200);\n  // Body deve essere un array\n  expect(response.body).to.be.an('array');\n  // Controlliamo il primo elemento\n  expect(response.body[0]).to.have.property('id');\n  expect(response.body[0]).to.have.property('title');\n});",
+              "err": {},
+              "uuid": "0622ee81-25b7-4aa6-8f38-7ac64c16801b",
+              "parentUUID": "213d5889-073f-44f3-857d-6878d2219107",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "GET - Recupera un singolo post e controlla valori specifici",
+              "fullTitle": "API GET Tests GET - Recupera un singolo post e controlla valori specifici",
+              "timedOut": null,
+              "duration": 138,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.request('https://jsonplaceholder.typicode.com/posts/1').then(response => {\n  expect(response.status).to.eq(200);\n  expect(response.body).to.have.property('id', 1);\n  expect(response.body.userId).to.eq(1);\n});",
+              "err": {},
+              "uuid": "2eeff74f-6ec9-4a81-9e1d-b73eaf4cb5a2",
+              "parentUUID": "213d5889-073f-44f3-857d-6878d2219107",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "0622ee81-25b7-4aa6-8f38-7ac64c16801b",
+            "2eeff74f-6ec9-4a81-9e1d-b73eaf4cb5a2"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 507,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}

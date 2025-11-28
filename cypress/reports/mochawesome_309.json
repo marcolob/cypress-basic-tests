@@ -1,0 +1,105 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-11-28T16:25:43.525Z",
+    "end": "2025-11-28T16:25:43.766Z",
+    "duration": 241,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "987a7107-1dac-4e49-9081-c3c106f81da4",
+      "title": "",
+      "fullFile": "cypress\\e2e\\api\\api_post.cy.js",
+      "file": "cypress\\e2e\\api\\api_post.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "6e2cef3f-ca29-4fc7-8418-242808478efb",
+          "title": "API POST Tests",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "POST - Crea un nuovo post e controlla la risposta",
+              "fullTitle": "API POST Tests POST - Crea un nuovo post e controlla la risposta",
+              "timedOut": null,
+              "duration": 201,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.request({\n  method: 'POST',\n  url: 'https://jsonplaceholder.typicode.com/posts',\n  body: {\n    title: 'Test Title',\n    body: 'Test body content',\n    userId: 1\n  },\n  headers: {\n    'Content-type': 'application/json; charset=UTF-8'\n  }\n}).then(response => {\n  expect(response.status).to.eq(201);\n  expect(response.body).to.have.property('title', 'Test Title');\n  expect(response.body).to.have.property('id'); // l'API restituisce un ID fittizio\n});",
+              "err": {},
+              "uuid": "07d43272-d107-4bc5-adac-0be18e729c17",
+              "parentUUID": "6e2cef3f-ca29-4fc7-8418-242808478efb",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "07d43272-d107-4bc5-adac-0be18e729c17"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 201,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}

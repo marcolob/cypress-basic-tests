@@ -1,0 +1,132 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 0,
+    "pending": 0,
+    "failures": 2,
+    "start": "2025-11-28T12:44:13.063Z",
+    "end": "2025-11-28T12:44:20.173Z",
+    "duration": 7110,
+    "testsRegistered": 2,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "891b151b-da8d-4ea8-822d-f0497c69bf82",
+      "title": "",
+      "fullFile": "cypress\\e2e\\intercepts\\intercept_advanced.cy.js",
+      "file": "cypress\\e2e\\intercepts\\intercept_advanced.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "21daefe3-00ef-4a36-89ef-8122853c04e7",
+          "title": "Intercept Avanzati - SauceDemo",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Simula errore 500 su chiamata prodotti",
+              "fullTitle": "Intercept Avanzati - SauceDemo Simula errore 500 su chiamata prodotti",
+              "timedOut": null,
+              "duration": 4671,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "// Intercetta API prodotti e simula errore server\ncy.intercept('GET', '/api/products', {\n  statusCode: 500,\n  body: {\n    error: 'Internal Server Error'\n  }\n}).as('getProductsError');\n// Visita pagina prodotti che triggera la chiamata\ncy.visit('/inventory.html');\ncy.wait('@getProductsError').then(interception => {\n  expect(interception.response.statusCode).to.eq(500);\n  expect(interception.response.body.error).to.eq('Internal Server Error');\n});\n// Verifica che UI gestisca l'errore (esempio: messaggio visibile)\ncy.contains('Errore nel caricamento prodotti').should('be.visible');",
+              "err": {
+                "message": "CypressError: `cy.visit()` failed trying to load:\n\nhttps://www.saucedemo.com/inventory.html\n\nThe response we received from your web server was:\n\n  > 404: Not Found\n\nThis was considered a failure because the status code was not `2xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`",
+                "estack": "CypressError: `cy.visit()` failed trying to load:\n\nhttps://www.saucedemo.com/inventory.html\n\nThe response we received from your web server was:\n\n  > 404: Not Found\n\nThis was considered a failure because the status code was not `2xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n    at <unknown> (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:134982:76)\n    at visitFailedByErr (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:134552:12)\n    at <unknown> (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:134965:13)\n    at tryCatcher (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1546:18)\n    at Promise._settlePromise0 (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1591:10)\n    at Promise._settlePromises (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1667:18)\n    at _drainQueueStep (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:2377:12)\n    at _drainQueue (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:2370:9)\n    at Async._drainQueues (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:2386:5)\n    at Async.drainQueues (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:2256:14)\nFrom Your Spec Code:\n    at Context.eval (webpack://cypressclean/./cypress/e2e/intercepts/intercept_advanced.cy.js:19:7)",
+                "diff": null
+              },
+              "uuid": "ca5d5557-b3f2-4daa-811b-54aadfeceeaf",
+              "parentUUID": "21daefe3-00ef-4a36-89ef-8122853c04e7",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Simula delay nella risposta API",
+              "fullTitle": "Intercept Avanzati - SauceDemo Simula delay nella risposta API",
+              "timedOut": null,
+              "duration": 2151,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.intercept('GET', '/api/products', req => {\n  req.reply(res => {\n    res.delay(2000); // 2 secondi di ritardo\n    res.send({\n      body: [{\n        id: 1,\n        name: 'Mock Product',\n        price: 9.99\n      }]\n    });\n  });\n}).as('delayedProducts');\ncy.visit('/inventory.html');\ncy.wait('@delayedProducts');\ncy.contains('Mock Product').should('be.visible');",
+              "err": {
+                "message": "CypressError: `cy.visit()` failed trying to load:\n\nhttps://www.saucedemo.com/inventory.html\n\nThe response we received from your web server was:\n\n  > 404: Not Found\n\nThis was considered a failure because the status code was not `2xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`",
+                "estack": "CypressError: `cy.visit()` failed trying to load:\n\nhttps://www.saucedemo.com/inventory.html\n\nThe response we received from your web server was:\n\n  > 404: Not Found\n\nThis was considered a failure because the status code was not `2xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n    at <unknown> (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:134982:76)\n    at visitFailedByErr (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:134552:12)\n    at <unknown> (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:134965:13)\n    at tryCatcher (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1546:18)\n    at Promise._settlePromise0 (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1591:10)\n    at Promise._settlePromises (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1667:18)\n    at _drainQueueStep (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:2377:12)\n    at _drainQueue (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:2370:9)\n    at Async._drainQueues (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:2386:5)\n    at Async.drainQueues (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:2256:14)\nFrom Your Spec Code:\n    at Context.eval (webpack://cypressclean/./cypress/e2e/intercepts/intercept_advanced.cy.js:38:7)",
+                "diff": null
+              },
+              "uuid": "feb0ede7-9395-40ee-9d1d-05f38522e416",
+              "parentUUID": "21daefe3-00ef-4a36-89ef-8122853c04e7",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "ca5d5557-b3f2-4daa-811b-54aadfeceeaf",
+            "feb0ede7-9395-40ee-9d1d-05f38522e416"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 6822,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}

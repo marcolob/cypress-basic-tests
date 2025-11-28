@@ -1,0 +1,124 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-11-28T13:31:39.087Z",
+    "end": "2025-11-28T13:31:44.558Z",
+    "duration": 5471,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "9649a785-3e6a-41e1-a10b-35f5308a2544",
+      "title": "",
+      "fullFile": "cypress\\e2e\\login\\login.cy.js",
+      "file": "cypress\\e2e\\login\\login.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "0d27d4fe-0117-4a0e-9646-383e017152bf",
+          "title": "Login Tests - SauceDemo",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should login successfully with valid credentials",
+              "fullTitle": "Login Tests - SauceDemo should login successfully with valid credentials",
+              "timedOut": null,
+              "duration": 3721,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Esegue login tramite metodo del Page Object\n_LoginPage.default.login('standard_user', 'secret_sauce');\n// Verifica che l'URL sia quello della pagina inventario (login riuscito)\ncy.url().should('include', '/inventory.html');",
+              "err": {},
+              "uuid": "778619f0-2ea6-4f47-813c-1448da271ab3",
+              "parentUUID": "0d27d4fe-0117-4a0e-9646-383e017152bf",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should show error on invalid credentials",
+              "fullTitle": "Login Tests - SauceDemo should show error on invalid credentials",
+              "timedOut": null,
+              "duration": 1490,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Prova a eseguire login con credenziali errate\n_LoginPage.default.login('wrong_user', 'wrong_password');\n// Verifica la presenza del messaggio di errore\n_LoginPage.default.errorMessage.should('be.visible').and('contain.text', 'Username and password do not match any user in this service');",
+              "err": {},
+              "uuid": "908e9269-ea46-4173-a0aa-802e5ad29520",
+              "parentUUID": "0d27d4fe-0117-4a0e-9646-383e017152bf",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "778619f0-2ea6-4f47-813c-1448da271ab3",
+            "908e9269-ea46-4173-a0aa-802e5ad29520"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 5211,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}

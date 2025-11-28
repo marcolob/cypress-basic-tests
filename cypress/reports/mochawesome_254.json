@@ -1,0 +1,148 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2025-11-28T15:49:20.038Z",
+    "end": "2025-11-28T15:49:20.545Z",
+    "duration": 507,
+    "testsRegistered": 3,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 2,
+    "hasSkipped": true
+  },
+  "results": [
+    {
+      "uuid": "385a5155-dcc6-4b29-b902-aa047eb0050d",
+      "title": "",
+      "fullFile": "cypress\\e2e\\smoke\\09_radio_realsite.cy.js",
+      "file": "cypress\\e2e\\smoke\\09_radio_realsite.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "6a386c2e-5a59-49cc-8c30-19dcbe35a357",
+          "title": "Radio Button Test - Local Fixture",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Should select \"Female\" and verify message",
+              "fullTitle": "Radio Button Test - Local Fixture Should select \"Female\" and verify message",
+              "timedOut": null,
+              "duration": 444,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('input[name=\"optradio\"][value=\"Female\"]').check({\n  force: true\n});\ncy.get('#buttoncheck').click();\ncy.get('#result').should('contain.text', 'Female');",
+              "err": {
+                "message": "CypressError: `cy.visit()` failed trying to load:\n\nhttps://www.saucedemo.com/cypress/fixtures/radio_test.html\n\nThe response we received from your web server was:\n\n  > 404: Not Found\n\nThis was considered a failure because the status code was not `2xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `Radio Button Test - Local F...`",
+                "estack": "CypressError: `cy.visit()` failed trying to load:\n\nhttps://www.saucedemo.com/cypress/fixtures/radio_test.html\n\nThe response we received from your web server was:\n\n  > 404: Not Found\n\nThis was considered a failure because the status code was not `2xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `Radio Button Test - Local F...`\n    at <unknown> (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:134982:76)\n    at visitFailedByErr (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:134552:12)\n    at <unknown> (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:134965:13)\n    at tryCatcher (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1546:18)\n    at Promise._settlePromise0 (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1591:10)\n    at Promise._settlePromises (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1667:18)\n    at _drainQueueStep (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:2377:12)\n    at _drainQueue (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:2370:9)\n    at Async._drainQueues (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:2386:5)\n    at Async.drainQueues (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:2256:14)\nFrom Your Spec Code:\n    at Context.eval (webpack://cypressclean/./cypress/e2e/smoke/09_radio_realsite.cy.js:5:7)",
+                "diff": null
+              },
+              "uuid": "d0fa2bc7-acea-41c6-a286-31f542b08b22",
+              "parentUUID": "6a386c2e-5a59-49cc-8c30-19dcbe35a357",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Should select \"Male\" and verify message",
+              "fullTitle": "Radio Button Test - Local Fixture Should select \"Male\" and verify message",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('input[name=\"optradio\"][value=\"Male\"]').check({\n  force: true\n});\ncy.get('#buttoncheck').click();\ncy.get('#result').should('contain.text', 'Male');",
+              "err": {},
+              "uuid": "53d7911d-b09d-405f-ae7e-caf7b76c0441",
+              "parentUUID": "6a386c2e-5a59-49cc-8c30-19dcbe35a357",
+              "isHook": false,
+              "skipped": true
+            },
+            {
+              "title": "Should show \"No selection\" if none selected",
+              "fullTitle": "Radio Button Test - Local Fixture Should show \"No selection\" if none selected",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('#buttoncheck').click();\ncy.get('#result').should('contain.text', 'No selection');",
+              "err": {},
+              "uuid": "3a5e82aa-7902-420b-96d8-f3db9798b915",
+              "parentUUID": "6a386c2e-5a59-49cc-8c30-19dcbe35a357",
+              "isHook": false,
+              "skipped": true
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "d0fa2bc7-acea-41c6-a286-31f542b08b22"
+          ],
+          "pending": [],
+          "skipped": [
+            "53d7911d-b09d-405f-ae7e-caf7b76c0441",
+            "3a5e82aa-7902-420b-96d8-f3db9798b915"
+          ],
+          "duration": 444,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}

@@ -1,0 +1,109 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2025-11-28T13:30:21.930Z",
+    "end": "2025-11-28T13:30:30.416Z",
+    "duration": 8486,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "c23cebab-bd50-4af4-9df9-9656e4f220e9",
+      "title": "",
+      "fullFile": "cypress\\e2e\\forms\\form_positive.cy.js",
+      "file": "cypress\\e2e\\forms\\form_positive.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "4e0f8f3e-9eab-4b47-91f7-69976526e5a0",
+          "title": "Form Positive Tests - SauceDemo",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should submit the form with valid data",
+              "fullTitle": "Form Positive Tests - SauceDemo should submit the form with valid data",
+              "timedOut": null,
+              "duration": 8311,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "// 🔹 Compilazione dei campi del form usando il Page Object\n_FormPage.default.fillForm('Marco Lobosco', 'marco@example.com', 'Messaggio di test');\n// 🔹 Verifica che il messaggio di successo sia visibile e corretto\ncy.get('.success-message').should('be.visible').and('contain.text', 'Form submitted successfully');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `#name`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `#name`, but never found it.\n    at get nameInput (webpack://cypressclean/./cypress/pages/FormPage.js:2:30)\n    at FormPage.fillForm (webpack://cypressclean/./cypress/pages/FormPage.js:8:9)\n    at Context.eval (webpack://cypressclean/./cypress/e2e/forms/form_positive.cy.js:19:13)",
+                "diff": null
+              },
+              "uuid": "c082c6c1-4701-4a41-9581-00109c308498",
+              "parentUUID": "4e0f8f3e-9eab-4b47-91f7-69976526e5a0",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "c082c6c1-4701-4a41-9581-00109c308498"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 8311,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}

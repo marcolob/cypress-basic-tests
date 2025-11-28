@@ -1,19 +1,28 @@
+import LoginPage from '../../pages/LoginPage';
+
 describe('Login Tests - SauceDemo', () => {
+
   beforeEach(() => {
-    cy.visit('/'); // baseUrl viene preso dal cypress.config.js
+    // Visita la pagina di login prima di ogni test
+    cy.visit('/');
   });
 
   it('should login successfully with valid credentials', () => {
-    cy.get('[data-test=username]').type('standard_user');
-    cy.get('[data-test=password]').type('secret_sauce');
-    cy.get('[data-test=login-button]').click();
+    // Esegue login tramite metodo del Page Object
+    LoginPage.login('standard_user', 'secret_sauce');
+
+    // Verifica che l'URL sia quello della pagina inventario (login riuscito)
     cy.url().should('include', '/inventory.html');
   });
 
   it('should show error on invalid credentials', () => {
-    cy.get('[data-test=username]').type('wrong_user');
-    cy.get('[data-test=password]').type('wrong_password');
-    cy.get('[data-test=login-button]').click();
-    cy.get('[data-test=error]').should('contain', 'Username and password do not match');
+    // Prova a eseguire login con credenziali errate
+    LoginPage.login('wrong_user', 'wrong_password');
+
+    // Verifica la presenza del messaggio di errore
+    LoginPage.errorMessage
+      .should('be.visible')
+      .and('contain.text', 'Username and password do not match any user in this service');
   });
+
 });

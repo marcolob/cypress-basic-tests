@@ -1,0 +1,143 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-11-28T16:00:26.629Z",
+    "end": "2025-11-28T16:00:31.408Z",
+    "duration": 4779,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "9090166e-637d-46c8-8f5d-608ebff82244",
+      "title": "",
+      "fullFile": "cypress\\e2e\\cart\\cart_badge.cy.js",
+      "file": "cypress\\e2e\\cart\\cart_badge.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "05d29be3-a637-4a36-8e5f-cfef04025187",
+          "title": "Cart Badge UI",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Aggiorna il badge quando aggiungi un prodotto",
+              "fullTitle": "Cart Badge UI Aggiorna il badge quando aggiungi un prodotto",
+              "timedOut": null,
+              "duration": 1432,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Badge inizialmente non visibile\n_CartPage.default.getCartCount().should('not.exist');\n// Aggiungi il primo prodotto\n_CartPage.default.addFirstProductToCart();\n// Badge dovrebbe apparire con numero 1\n_CartPage.default.getCartCount().should('be.visible').and('contain.text', '1');",
+              "err": {},
+              "uuid": "deafe5e3-8ff3-40e2-ab5a-410ae6f0ce6f",
+              "parentUUID": "05d29be3-a637-4a36-8e5f-cfef04025187",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Aggiorna il badge quando rimuovi un prodotto",
+              "fullTitle": "Cart Badge UI Aggiorna il badge quando rimuovi un prodotto",
+              "timedOut": null,
+              "duration": 1953,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Aggiungi il primo prodotto\n_CartPage.default.addFirstProductToCart();\n_CartPage.default.getCartCount().should('be.visible').and('contain.text', '1');\n// Rimuovi il prodotto\n_CartPage.default.removeFirstProductFromCart();\n// Badge dovrebbe sparire\n_CartPage.default.getCartCount().should('not.exist');",
+              "err": {},
+              "uuid": "35be0252-5296-47f5-9593-27816bdbac7a",
+              "parentUUID": "05d29be3-a637-4a36-8e5f-cfef04025187",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Aggiorna correttamente il badge con più prodotti",
+              "fullTitle": "Cart Badge UI Aggiorna correttamente il badge con più prodotti",
+              "timedOut": null,
+              "duration": 1216,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Aggiunge i primi due prodotti diversi\n_CartPage.default.addProductByIndex(0);\n_CartPage.default.addProductByIndex(1);\n// Verifica badge con numero 2\n_CartPage.default.getCartCount().should('be.visible').and('contain.text', '2');\n// Rimuovi un prodotto\n_CartPage.default.removeFirstProductFromCart();\n_CartPage.default.getCartCount().should('be.visible').and('contain.text', '1');",
+              "err": {},
+              "uuid": "eb8a61cd-9e4c-4d86-8c8b-e3e68a8b9728",
+              "parentUUID": "05d29be3-a637-4a36-8e5f-cfef04025187",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "deafe5e3-8ff3-40e2-ab5a-410ae6f0ce6f",
+            "35be0252-5296-47f5-9593-27816bdbac7a",
+            "eb8a61cd-9e4c-4d86-8c8b-e3e68a8b9728"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 4601,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}

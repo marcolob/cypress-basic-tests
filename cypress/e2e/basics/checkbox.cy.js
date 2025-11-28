@@ -1,13 +1,24 @@
-describe('Product Filter Checkbox - SauceDemo', () => {
+// cypress/e2e/basics/checkbox.cy.js
+import ProductsPage from '../../pages/ProductsPage';
+
+describe('Product Sorting - Price Low to High (PO Example)', () => {
+
   beforeEach(() => {
     cy.visit('/');
     cy.get('[data-test=username]').type('standard_user');
     cy.get('[data-test=password]').type('secret_sauce');
     cy.get('[data-test=login-button]').click();
+    cy.url().should('include', '/inventory.html');
   });
 
-  it('should select "Price (low to high)" filter', () => {
-    cy.get('.product_sort_container').select('lohi');
-    cy.get('.inventory_item_price').first().should('contain.text', '7.99'); // prezzo più basso
+  it('should correctly show lowest price first when sorting Low → High', () => {
+    // 🔹 Selezione filtro dal dropdown
+    ProductsPage.selectSortOption('lohi');
+
+    // 🔹 Verifica: il primo prodotto deve essere quello da $7.99
+    ProductsPage.productPrice().first().should('contain', '7.99');
+
+    // 🔹 Verifica opzionale: titolo del prodotto
+    ProductsPage.productTitle().first().should('contain', 'Sauce Labs Onesie');
   });
 });

@@ -1,0 +1,124 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-11-27T16:10:20.528Z",
+    "end": "2025-11-27T16:10:25.499Z",
+    "duration": 4971,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "70e681b7-5351-43e6-a08b-09b62c1c1cee",
+      "title": "",
+      "fullFile": "cypress\\e2e\\dataDriven\\dataDriven.cy.js",
+      "file": "cypress\\e2e\\dataDriven\\dataDriven.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "2b51e591-b0d9-451c-a6da-b8a4b0db5b0c",
+          "title": "Data Driven Login - SauceDemo",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should login for standard_user",
+              "fullTitle": "Data Driven Login - SauceDemo should login for standard_user",
+              "timedOut": null,
+              "duration": 3347,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('/');\ncy.get('[data-test=username]').type(user.username);\ncy.get('[data-test=password]').type(user.password);\ncy.get('[data-test=login-button]').click();\nif (user.valid) {\n  cy.url().should('include', '/inventory.html');\n} else {\n  cy.get('[data-test=error]').should('contain', 'locked out');\n}",
+              "err": {},
+              "uuid": "a24a842f-f8f5-41b7-bff8-931ac0979096",
+              "parentUUID": "2b51e591-b0d9-451c-a6da-b8a4b0db5b0c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should fail for locked_out_user",
+              "fullTitle": "Data Driven Login - SauceDemo should fail for locked_out_user",
+              "timedOut": null,
+              "duration": 1347,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('/');\ncy.get('[data-test=username]').type(user.username);\ncy.get('[data-test=password]').type(user.password);\ncy.get('[data-test=login-button]').click();\nif (user.valid) {\n  cy.url().should('include', '/inventory.html');\n} else {\n  cy.get('[data-test=error]').should('contain', 'locked out');\n}",
+              "err": {},
+              "uuid": "53870a02-599f-4931-9193-77803c88bd12",
+              "parentUUID": "2b51e591-b0d9-451c-a6da-b8a4b0db5b0c",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "a24a842f-f8f5-41b7-bff8-931ac0979096",
+            "53870a02-599f-4931-9193-77803c88bd12"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 4694,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}

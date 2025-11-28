@@ -1,0 +1,105 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-11-28T13:30:53.912Z",
+    "end": "2025-11-28T13:30:57.083Z",
+    "duration": 3171,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "6c0f70ec-9318-421a-bf88-0a2f8884e08b",
+      "title": "",
+      "fullFile": "cypress\\e2e\\cart\\add_three_product_cart.cy.js",
+      "file": "cypress\\e2e\\cart\\add_three_product_cart.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "90953758-cbac-4659-bbb5-8bacb01bfeab",
+          "title": "Cart — Add Multiple Products",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should add two different products to the cart (two PO methods)",
+              "fullTitle": "Cart — Add Multiple Products should add two different products to the cart (two PO methods)",
+              "timedOut": null,
+              "duration": 3001,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// 1️⃣ Aggiungo il primo prodotto usando INDEX\n_CartPage.default.addProductByIndex(0);\n// 2️⃣ Aggiungo il secondo usando il metodo con PRODUCT NAME\n_CartPage.default.addProductByDataTest(\"add-to-cart-sauce-labs-bike-light\");\n// 3 Aggiungo il terzo usando il metodo con PRODUCT NAME\n_CartPage.default.addProductByDataTest(\"add-to-cart-sauce-labs-bolt-t-shirt\");\n// 4 Controllo il badge (dovrebbe essere 3)\n_CartPage.default.getCartCount().should('have.text', '3');\n// 5 Apro il carrello via PO\n_CartPage.default.openCart();\n// 6 Controllo che ci siano effettivamente 3 prodotti\ncy.get('.cart_item').should('have.length', 3);",
+              "err": {},
+              "uuid": "095500da-f34d-4405-9f43-8786662986a8",
+              "parentUUID": "90953758-cbac-4659-bbb5-8bacb01bfeab",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "095500da-f34d-4405-9f43-8786662986a8"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 3001,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}

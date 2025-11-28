@@ -1,0 +1,243 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 8,
+    "passes": 7,
+    "pending": 0,
+    "failures": 1,
+    "start": "2025-11-28T15:08:46.036Z",
+    "end": "2025-11-28T15:09:02.357Z",
+    "duration": 16321,
+    "testsRegistered": 8,
+    "passPercent": 87.5,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "da9d93eb-acb2-4196-9468-79192a5d6cb0",
+      "title": "",
+      "fullFile": "cypress\\e2e\\smoke\\00_smoke_central.cy.js",
+      "file": "cypress\\e2e\\smoke\\00_smoke_central.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "75e13e96-4cbf-4d0d-bf23-02fb4dea7058",
+          "title": "Centralized Smoke Test - SauceDemo",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Login with valid credentials",
+              "fullTitle": "Centralized Smoke Test - SauceDemo Login with valid credentials",
+              "timedOut": null,
+              "duration": 3358,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_LoginPage.default.login('standard_user', 'secret_sauce');\ncy.url().should('include', '/inventory.html');",
+              "err": {},
+              "uuid": "3ab72496-1b9d-4be1-aa57-90e55be91a44",
+              "parentUUID": "75e13e96-4cbf-4d0d-bf23-02fb4dea7058",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verify products are visible",
+              "fullTitle": "Centralized Smoke Test - SauceDemo Verify products are visible",
+              "timedOut": null,
+              "duration": 1240,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_LoginPage.default.login('standard_user', 'secret_sauce');\n_ProductsPage.default.productTitle().should('have.length.greaterThan', 0);",
+              "err": {},
+              "uuid": "245fa7e0-cfaf-4c8b-a33d-2c88edf78ab9",
+              "parentUUID": "75e13e96-4cbf-4d0d-bf23-02fb4dea7058",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Add products to cart and verify badge",
+              "fullTitle": "Centralized Smoke Test - SauceDemo Add products to cart and verify badge",
+              "timedOut": null,
+              "duration": 1189,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_LoginPage.default.login('standard_user', 'secret_sauce');\n// Add first 2 products using data-test (option B)\n_CartPage.default.addProductByDataTest('add-to-cart-sauce-labs-backpack');\n_CartPage.default.addProductByDataTest('add-to-cart-sauce-labs-bike-light');\n// Verify cart badge\n_CartPage.default.getCartCount().should('contain.text', '2');\n// Open cart and verify 2 items present (without checking names)\n_CartPage.default.openCart();\n_CartPage.default.getCartItemCount().should('have.length', 2);",
+              "err": {},
+              "uuid": "747a590b-eb5e-4824-aa4a-5ed4b6d5da0b",
+              "parentUUID": "75e13e96-4cbf-4d0d-bf23-02fb4dea7058",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Remove all products from cart",
+              "fullTitle": "Centralized Smoke Test - SauceDemo Remove all products from cart",
+              "timedOut": null,
+              "duration": 1388,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_LoginPage.default.login('standard_user', 'secret_sauce');\n// Add 2 products\n_CartPage.default.addProductByDataTest('add-to-cart-sauce-labs-backpack');\n_CartPage.default.addProductByDataTest('add-to-cart-sauce-labs-bike-light');\n_CartPage.default.openCart();\n_CartPage.default.removeAllProducts();\n// Verify cart is empty\n_CartPage.default.getCartItemCount().should('have.length', 0);\n_CartPage.default.getCartCount().should('not.exist');",
+              "err": {},
+              "uuid": "7e0aeb9d-317b-4add-8af4-5af6c83f6bca",
+              "parentUUID": "75e13e96-4cbf-4d0d-bf23-02fb4dea7058",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Fill and submit contact form",
+              "fullTitle": "Centralized Smoke Test - SauceDemo Fill and submit contact form",
+              "timedOut": null,
+              "duration": 5451,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "_LoginPage.default.login('standard_user', 'secret_sauce');\n_FormPage.default.fillForm('Marco', 'marco@example.com', 'Test portfolio form');\n// Verify submission confirmation\ncy.contains('Form submitted').should('be.visible');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `#name`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `#name`, but never found it.\n    at get nameInput (webpack://cypressclean/./cypress/pages/FormPage.js:2:30)\n    at FormPage.fillForm (webpack://cypressclean/./cypress/pages/FormPage.js:8:9)\n    at Context.eval (webpack://cypressclean/./cypress/e2e/smoke/00_smoke_central.cy.js:73:13)",
+                "diff": null
+              },
+              "uuid": "756e1c74-0306-49b1-b607-e77c7b3c0f85",
+              "parentUUID": "75e13e96-4cbf-4d0d-bf23-02fb4dea7058",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Select dropdown sorting \"Price (low to high)\"",
+              "fullTitle": "Centralized Smoke Test - SauceDemo Select dropdown sorting \"Price (low to high)\"",
+              "timedOut": null,
+              "duration": 1159,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_LoginPage.default.login('standard_user', 'secret_sauce');\n_ProductsPage.default.selectSortOption('lohi');\n_ProductsPage.default.productPrice().first().should('contain.text', '7.99');",
+              "err": {},
+              "uuid": "9e14d32d-e82f-4524-9a29-a2269199c380",
+              "parentUUID": "75e13e96-4cbf-4d0d-bf23-02fb4dea7058",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Check checkbox/radio behaviors",
+              "fullTitle": "Centralized Smoke Test - SauceDemo Check checkbox/radio behaviors",
+              "timedOut": null,
+              "duration": 1133,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_LoginPage.default.login('standard_user', 'secret_sauce');\ncy.get('.product_sort_container').select('Name (Z to A)');\n_ProductsPage.default.productTitle().first().should('contain.text', 'Test.allTheThings() T-Shirt (Red)');",
+              "err": {},
+              "uuid": "8aa06273-3ef0-41bf-a2e4-df4cc88110d7",
+              "parentUUID": "75e13e96-4cbf-4d0d-bf23-02fb4dea7058",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verify link navigation",
+              "fullTitle": "Centralized Smoke Test - SauceDemo Verify link navigation",
+              "timedOut": null,
+              "duration": 1113,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_LoginPage.default.login('standard_user', 'secret_sauce');\ncy.contains('Sauce Labs Backpack').click();\ncy.url().should('include', '/inventory-item.html');",
+              "err": {},
+              "uuid": "d8255190-0933-49e3-86e5-754e71773f6b",
+              "parentUUID": "75e13e96-4cbf-4d0d-bf23-02fb4dea7058",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "3ab72496-1b9d-4be1-aa57-90e55be91a44",
+            "245fa7e0-cfaf-4c8b-a33d-2c88edf78ab9",
+            "747a590b-eb5e-4824-aa4a-5ed4b6d5da0b",
+            "7e0aeb9d-317b-4add-8af4-5af6c83f6bca",
+            "9e14d32d-e82f-4524-9a29-a2269199c380",
+            "8aa06273-3ef0-41bf-a2e4-df4cc88110d7",
+            "d8255190-0933-49e3-86e5-754e71773f6b"
+          ],
+          "failures": [
+            "756e1c74-0306-49b1-b607-e77c7b3c0f85"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 16031,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}

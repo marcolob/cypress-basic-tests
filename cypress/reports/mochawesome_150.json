@@ -1,0 +1,178 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 4,
+    "passes": 0,
+    "pending": 0,
+    "failures": 4,
+    "start": "2025-11-28T12:41:44.012Z",
+    "end": "2025-11-28T12:42:15.698Z",
+    "duration": 31686,
+    "testsRegistered": 4,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "c637d9e5-eeeb-410f-a66d-e4e036edfec8",
+      "title": "",
+      "fullFile": "cypress\\e2e\\basics\\responsive.cy.js",
+      "file": "cypress\\e2e\\basics\\responsive.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "d905bc90-a260-4bad-a10b-f18f2bef8187",
+          "title": "Responsive Viewport Test - Google",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should display Google title correctly on iphone-6",
+              "fullTitle": "Responsive Viewport Test - Google should display Google title correctly on iphone-6",
+              "timedOut": null,
+              "duration": 7231,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "// 🔹 Imposta viewport\ncy.viewport(device);\n// 🔹 Visita Google\ncy.visit('https://www.google.com');\n// 🔹 Verifica titolo\ncy.title().should('include', 'Google');\n// 🔹 Verifica barra di ricerca visibile\ncy.get('input[name=\"q\"]').should('be.visible');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `input[name=\"q\"]`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `input[name=\"q\"]`, but never found it.\n    at Context.eval (webpack://cypressclean/./cypress/e2e/basics/responsive.cy.js:19:32)",
+                "diff": null
+              },
+              "uuid": "e392eaeb-f46d-478b-a90d-8f761e41d67e",
+              "parentUUID": "d905bc90-a260-4bad-a10b-f18f2bef8187",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should display Google title correctly on ipad-2",
+              "fullTitle": "Responsive Viewport Test - Google should display Google title correctly on ipad-2",
+              "timedOut": null,
+              "duration": 6522,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "// 🔹 Imposta viewport\ncy.viewport(device);\n// 🔹 Visita Google\ncy.visit('https://www.google.com');\n// 🔹 Verifica titolo\ncy.title().should('include', 'Google');\n// 🔹 Verifica barra di ricerca visibile\ncy.get('input[name=\"q\"]').should('be.visible');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `input[name=\"q\"]`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `input[name=\"q\"]`, but never found it.\n    at Context.eval (webpack://cypressclean/./cypress/e2e/basics/responsive.cy.js:19:32)",
+                "diff": null
+              },
+              "uuid": "da25287e-df01-4cbb-896b-bc8584f2438b",
+              "parentUUID": "d905bc90-a260-4bad-a10b-f18f2bef8187",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should display Google title correctly on macbook-13",
+              "fullTitle": "Responsive Viewport Test - Google should display Google title correctly on macbook-13",
+              "timedOut": null,
+              "duration": 5738,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "// 🔹 Imposta viewport\ncy.viewport(device);\n// 🔹 Visita Google\ncy.visit('https://www.google.com');\n// 🔹 Verifica titolo\ncy.title().should('include', 'Google');\n// 🔹 Verifica barra di ricerca visibile\ncy.get('input[name=\"q\"]').should('be.visible');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `input[name=\"q\"]`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `input[name=\"q\"]`, but never found it.\n    at Context.eval (webpack://cypressclean/./cypress/e2e/basics/responsive.cy.js:19:32)",
+                "diff": null
+              },
+              "uuid": "409b3742-9a61-498b-bab5-15a959fdffec",
+              "parentUUID": "d905bc90-a260-4bad-a10b-f18f2bef8187",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should display Google title correctly on macbook-15",
+              "fullTitle": "Responsive Viewport Test - Google should display Google title correctly on macbook-15",
+              "timedOut": null,
+              "duration": 6829,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "// 🔹 Imposta viewport\ncy.viewport(device);\n// 🔹 Visita Google\ncy.visit('https://www.google.com');\n// 🔹 Verifica titolo\ncy.title().should('include', 'Google');\n// 🔹 Verifica barra di ricerca visibile\ncy.get('input[name=\"q\"]').should('be.visible');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `input[name=\"q\"]`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `input[name=\"q\"]`, but never found it.\n    at Context.eval (webpack://cypressclean/./cypress/e2e/basics/responsive.cy.js:19:32)",
+                "diff": null
+              },
+              "uuid": "fd7a3843-e066-48bb-a69f-6a47398d2edd",
+              "parentUUID": "d905bc90-a260-4bad-a10b-f18f2bef8187",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "e392eaeb-f46d-478b-a90d-8f761e41d67e",
+            "da25287e-df01-4cbb-896b-bc8584f2438b",
+            "409b3742-9a61-498b-bab5-15a959fdffec",
+            "fd7a3843-e066-48bb-a69f-6a47398d2edd"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 26320,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}

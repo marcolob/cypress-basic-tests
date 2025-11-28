@@ -1,0 +1,105 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-11-28T12:42:34.663Z",
+    "end": "2025-11-28T12:42:38.491Z",
+    "duration": 3828,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "63246a0e-55a2-4865-b370-33190a32d882",
+      "title": "",
+      "fullFile": "cypress\\e2e\\cart\\add_product_cart_multiple.cy.js",
+      "file": "cypress\\e2e\\cart\\add_product_cart_multiple.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "13d3b49c-3ef1-41b1-94b1-1f4eb968f21f",
+          "title": "Cart — Add Multiple Products",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should add two different products to the cart (two PO methods)",
+              "fullTitle": "Cart — Add Multiple Products should add two different products to the cart (two PO methods)",
+              "timedOut": null,
+              "duration": 3710,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// 1️⃣ Aggiungo il primo prodotto usando INDEX\n_CartPage.default.addProductByIndex(0);\n// 2️⃣ Aggiungo il secondo con data-test\n_CartPage.default.addProductByDataTest(\"add-to-cart-sauce-labs-bike-light\");\n// 3️⃣ Controllo il badge\n_CartPage.default.getCartCount().should('have.text', '2');\n// 4️⃣ Apro il carrello via PO\n_CartPage.default.openCart();\n// 5️⃣ Controllo che ci siano effettivamente 2 prodotti\ncy.get('.cart_item').should('have.length', 2);",
+              "err": {},
+              "uuid": "8b9ce769-bdeb-4af2-bfc7-c30de6173282",
+              "parentUUID": "13d3b49c-3ef1-41b1-94b1-1f4eb968f21f",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "8b9ce769-bdeb-4af2-bfc7-c30de6173282"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 3710,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}

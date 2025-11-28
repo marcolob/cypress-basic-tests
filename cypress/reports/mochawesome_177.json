@@ -1,0 +1,109 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2025-11-28T13:28:52.835Z",
+    "end": "2025-11-28T13:28:58.909Z",
+    "duration": 6074,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "837dbf50-307a-4708-8909-4594af5792e2",
+      "title": "",
+      "fullFile": "cypress\\e2e\\api\\api_intercept.cy.js",
+      "file": "cypress\\e2e\\api\\api_intercept.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "93acab1a-0cb2-4a6b-8c8f-ca6740468716",
+          "title": "API Intercept Tests",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Mocka risposta API con cy.intercept()",
+              "fullTitle": "API Intercept Tests Mocka risposta API con cy.intercept()",
+              "timedOut": null,
+              "duration": 5887,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "// Intercetta la chiamata e risponde con un mock\ncy.intercept('GET', 'https://jsonplaceholder.typicode.com/posts/1', {\n  statusCode: 200,\n  body: {\n    id: 1,\n    title: 'Mocked Title',\n    userId: 999\n  }\n}).as('mockPost');\n// Trigger della request (puoi usare cy.request oppure visitare una pagina)\ncy.request('https://jsonplaceholder.typicode.com/posts/1');\ncy.wait('@mockPost').then(interception => {\n  expect(interception.response.statusCode).to.eq(200);\n  expect(interception.response.body.title).to.eq('Mocked Title');\n  expect(interception.response.body.userId).to.eq(999);\n});",
+              "err": {
+                "message": "CypressError: Timed out retrying after 5000ms: `cy.wait()` timed out waiting `5000ms` for the 1st request to the route: `mockPost`. No request ever occurred.\n\nhttps://on.cypress.io/wait",
+                "estack": "CypressError: Timed out retrying after 5000ms: `cy.wait()` timed out waiting `5000ms` for the 1st request to the route: `mockPost`. No request ever occurred.\n\nhttps://on.cypress.io/wait\n    at cypressErr (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:77680:18)\n    at Object.errByPath (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:77734:10)\n    at checkForXhr (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:138761:84)\n    at <unknown> (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:138787:28)\n    at tryCatcher (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:4285:29)\n    at whenStable (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:147197:68)\n    at <unknown> (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:147138:14)\n    at tryCatcher (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1546:18)\n    at Promise._settlePromise0 (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1591:10)\n    at Promise._settlePromises (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1671:18)\n    at Promise._fulfill (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1615:18)\n    at <unknown> (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:5420:46)\nFrom Your Spec Code:\n    at Context.eval (webpack://cypressclean/./cypress/e2e/api/api_intercept.cy.js:20:7)",
+                "diff": null
+              },
+              "uuid": "0e5532c0-790a-4bfe-b4a8-272d0b8793ec",
+              "parentUUID": "93acab1a-0cb2-4a6b-8c8f-ca6740468716",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "0e5532c0-790a-4bfe-b4a8-272d0b8793ec"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 5887,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}

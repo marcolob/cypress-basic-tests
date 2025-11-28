@@ -1,0 +1,247 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 8,
+    "passes": 6,
+    "pending": 0,
+    "failures": 2,
+    "start": "2025-11-28T15:20:22.203Z",
+    "end": "2025-11-28T15:20:45.368Z",
+    "duration": 23165,
+    "testsRegistered": 8,
+    "passPercent": 75,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "7b47217f-2018-4fb9-9ac6-76f1668b71fe",
+      "title": "",
+      "fullFile": "cypress\\e2e\\smoke\\00_smoke_central.cy.js",
+      "file": "cypress\\e2e\\smoke\\00_smoke_central.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "86c252f0-cbbb-4d58-b833-40446053ce15",
+          "title": "Centralized Smoke Test - SauceDemo",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Login with valid credentials",
+              "fullTitle": "Centralized Smoke Test - SauceDemo Login with valid credentials",
+              "timedOut": null,
+              "duration": 3939,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_LoginPage.default.login('standard_user', 'secret_sauce');\ncy.url().should('include', '/inventory.html'); // verifica redirect correttamente",
+              "err": {},
+              "uuid": "30cdbb11-a2ae-44f3-a01e-899c00b2f672",
+              "parentUUID": "86c252f0-cbbb-4d58-b833-40446053ce15",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verify products are visible",
+              "fullTitle": "Centralized Smoke Test - SauceDemo Verify products are visible",
+              "timedOut": null,
+              "duration": 1185,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_LoginPage.default.login('standard_user', 'secret_sauce');\n_ProductsPage.default.productTitle().should('have.length.greaterThan', 0); // almeno 1 prodotto presente",
+              "err": {},
+              "uuid": "a8c2b7ea-3551-4f25-b290-a343edbafc10",
+              "parentUUID": "86c252f0-cbbb-4d58-b833-40446053ce15",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Add products to cart and verify badge",
+              "fullTitle": "Centralized Smoke Test - SauceDemo Add products to cart and verify badge",
+              "timedOut": null,
+              "duration": 1221,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_LoginPage.default.login('standard_user', 'secret_sauce');\n// Aggiunge primi 2 prodotti usando CartPage POM\n_CartPage.default.addProductByIndex(0);\n_CartPage.default.addProductByIndex(1);\n// Verifica badge del carrello\n_CartPage.default.getCartCount().should('contain.text', '2');\n// Apri carrello e verifica che ci siano 2 prodotti (senza controllare nomi)\n_CartPage.default.openCart();\n_CartPage.default.getCartItemCount().should('have.length', 2);",
+              "err": {},
+              "uuid": "45d83e75-2337-4802-9171-0050b63242ef",
+              "parentUUID": "86c252f0-cbbb-4d58-b833-40446053ce15",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Remove all products from cart",
+              "fullTitle": "Centralized Smoke Test - SauceDemo Remove all products from cart",
+              "timedOut": null,
+              "duration": 1387,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_LoginPage.default.login('standard_user', 'secret_sauce');\n// Aggiunge 2 prodotti\n_CartPage.default.addProductByIndex(0);\n_CartPage.default.addProductByIndex(1);\n_CartPage.default.openCart();\n_CartPage.default.removeAllProducts();\n// Verifica che carrello sia vuoto\n_CartPage.default.getCartItemCount().should('have.length', 0);\n_CartPage.default.getCartCount().should('not.exist');",
+              "err": {},
+              "uuid": "327dd000-0d3d-453f-92ac-f33e5c523361",
+              "parentUUID": "86c252f0-cbbb-4d58-b833-40446053ce15",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Fill and submit contact form",
+              "fullTitle": "Centralized Smoke Test - SauceDemo Fill and submit contact form",
+              "timedOut": null,
+              "duration": 8307,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "// Apri form DemoQA\ncy.visit('https://demoqa.com/text-box');\n// Inserisci dati\ncy.get('#userName').type('Marco Rossi');\ncy.get('#userEmail').type('marco@example.com');\ncy.get('#currentAddress').type('Via Roma 1, Milano');\ncy.get('#permanentAddress').type('Via Milano 2, Milano');\n// Clicca submit\ncy.get('#submit').click({\n  force: true\n});\n// Verifica che i dati inseriti siano mostrati nella sezione output\ncy.get('#output #name').should('contain.text', 'Marco Rossi');\ncy.get('#output #email').should('contain.text', 'marco@example.com');\ncy.get('#output #currentAddress').should('contain.text', 'Via Roma 1, Milano');\ncy.get('#output #permanentAddress').should('contain.text', 'Via Milano 2, Milano');",
+              "err": {
+                "message": "Error: The following error originated from your application code, not from Cypress.\n\n  > null\n\nThis error was thrown by a cross origin page. If you wish to suppress this error you will have to use the cy.origin command to handle the error prior to visiting the page.\n\n`cy.origin('https://demoqa.com', () => {`\n`  cy.on('uncaught:exception', (e) => {`\n`    if (e.message.includes('Things went bad')) {`\n`      // we expected this error, so let's ignore it`\n`      // and let the test continue`\n`      return false`\n`    }`\n`  })`\n`})`\n`cy.visit('https://demoqa.com/text-box')`\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the `uncaught:exception` event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n\nhttps://on.cypress.io/origin",
+                "estack": "Error: The following error originated from your application code, not from Cypress.\n\n  > null\n\nThis error was thrown by a cross origin page. If you wish to suppress this error you will have to use the cy.origin command to handle the error prior to visiting the page.\n\n`cy.origin('https://demoqa.com', () => {`\n`  cy.on('uncaught:exception', (e) => {`\n`    if (e.message.includes('Things went bad')) {`\n`      // we expected this error, so let's ignore it`\n`      // and let the test continue`\n`      return false`\n`    }`\n`  })`\n`})`\n`cy.visit('https://demoqa.com/text-box')`\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the `uncaught:exception` event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n\nhttps://on.cypress.io/origin\n    at cypressErr (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:77680:18)\n    at Object.errByPath (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:77734:10)\n    at PrimaryOriginCommunicator.<anonymous> (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:173587:72)\n    at PrimaryOriginCommunicator.emit (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:149662:5)\n    at PrimaryOriginCommunicator.onMessage (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:172903:12)\n    at Uh (https://www.saucedemo.com/__/assets/index-cgNbuuh2.js:1728:115557)",
+                "diff": null
+              },
+              "uuid": "420ef62c-a61a-45bf-af88-d8119b001abe",
+              "parentUUID": "86c252f0-cbbb-4d58-b833-40446053ce15",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Select dropdown sorting \"Price (low to high)\"",
+              "fullTitle": "Centralized Smoke Test - SauceDemo Select dropdown sorting \"Price (low to high)\"",
+              "timedOut": null,
+              "duration": 4492,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "_LoginPage.default.login('standard_user', 'secret_sauce');\n_ProductsPage.default.selectSortOption('lohi');\n_ProductsPage.default.productPrice().first().should('contain.text', '7.99'); // prezzo più basso",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `#user-name`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `#user-name`, but never found it.\n    at get usernameInput (webpack://cypressclean/./cypress/pages/LoginPage.js:3:34)\n    at LoginPage.enterUsername (webpack://cypressclean/./cypress/pages/LoginPage.js:9:33)\n    at LoginPage.login (webpack://cypressclean/./cypress/pages/LoginPage.js:15:9)\n    at Context.eval (webpack://cypressclean/./cypress/e2e/smoke/00_smoke_central.cy.js:93:14)",
+                "diff": null
+              },
+              "uuid": "8100f05f-53b7-4f44-b013-de16f9201d4f",
+              "parentUUID": "86c252f0-cbbb-4d58-b833-40446053ce15",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Check checkbox/radio behaviors",
+              "fullTitle": "Centralized Smoke Test - SauceDemo Check checkbox/radio behaviors",
+              "timedOut": null,
+              "duration": 1155,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_LoginPage.default.login('standard_user', 'secret_sauce');\ncy.get('.product_sort_container').select('Name (Z to A)');\n_ProductsPage.default.productTitle().first().should('contain.text', 'Test.allTheThings() T-Shirt (Red)');",
+              "err": {},
+              "uuid": "8993cff1-09ed-4ed8-b240-6f9e0955a48a",
+              "parentUUID": "86c252f0-cbbb-4d58-b833-40446053ce15",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verify link navigation",
+              "fullTitle": "Centralized Smoke Test - SauceDemo Verify link navigation",
+              "timedOut": null,
+              "duration": 1153,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_LoginPage.default.login('standard_user', 'secret_sauce');\ncy.contains('Sauce Labs Backpack').click();\ncy.url().should('include', '/inventory-item.html'); // esempio navigazione prodotto",
+              "err": {},
+              "uuid": "2ef19fe2-4fd8-4fca-bfaf-24d374002b92",
+              "parentUUID": "86c252f0-cbbb-4d58-b833-40446053ce15",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "30cdbb11-a2ae-44f3-a01e-899c00b2f672",
+            "a8c2b7ea-3551-4f25-b290-a343edbafc10",
+            "45d83e75-2337-4802-9171-0050b63242ef",
+            "327dd000-0d3d-453f-92ac-f33e5c523361",
+            "8993cff1-09ed-4ed8-b240-6f9e0955a48a",
+            "2ef19fe2-4fd8-4fca-bfaf-24d374002b92"
+          ],
+          "failures": [
+            "420ef62c-a61a-45bf-af88-d8119b001abe",
+            "8100f05f-53b7-4f44-b013-de16f9201d4f"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 22839,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}

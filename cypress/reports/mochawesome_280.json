@@ -1,0 +1,209 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 6,
+    "passes": 4,
+    "pending": 0,
+    "failures": 2,
+    "start": "2025-11-28T16:01:00.250Z",
+    "end": "2025-11-28T16:01:14.119Z",
+    "duration": 13869,
+    "testsRegistered": 6,
+    "passPercent": 66.66666666666666,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "6b656b76-33a9-4c04-b822-03f66418eba0",
+      "title": "",
+      "fullFile": "cypress\\e2e\\regression\\regression.cy.js",
+      "file": "cypress\\e2e\\regression\\regression.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "da029057-e5ee-42b5-b93e-b3fc7287ff9c",
+          "title": "Regression Suite - SauceDemo",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Login positivo con credenziali valide",
+              "fullTitle": "Regression Suite - SauceDemo Login positivo con credenziali valide",
+              "timedOut": null,
+              "duration": 2101,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_LoginPage.default.login('standard_user', 'secret_sauce');\ncy.url().should('include', '/inventory.html');",
+              "err": {},
+              "uuid": "5eb98676-da6e-4e33-85f2-28f8639daf7c",
+              "parentUUID": "da029057-e5ee-42b5-b93e-b3fc7287ff9c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Login negativo con credenziali errate",
+              "fullTitle": "Regression Suite - SauceDemo Login negativo con credenziali errate",
+              "timedOut": null,
+              "duration": 1227,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_LoginPage.default.login('wrong_user', 'wrong_pass');\n_LoginPage.default.errorMessage.should('be.visible').and('contain.text', 'Username and password do not match any user in this service');",
+              "err": {},
+              "uuid": "9e9be73b-c371-4bdf-9750-8ff6d5657aac",
+              "parentUUID": "da029057-e5ee-42b5-b93e-b3fc7287ff9c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Aggiunge prodotti al carrello e verifica badge e titoli",
+              "fullTitle": "Regression Suite - SauceDemo Aggiunge prodotti al carrello e verifica badge e titoli",
+              "timedOut": null,
+              "duration": 1733,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "_LoginPage.default.login('standard_user', 'secret_sauce');\n// Verifica titoli dei primi 2 prodotti\n_ProductsPage.default.productTitle().then($titles => {\n  expect($titles.eq(0)).to.contain.text('Sauce Labs Backpack');\n  expect($titles.eq(1)).to.contain.text('Sauce Labs Bike Light');\n});\n// Aggiunge primi 2 prodotti\n_CartPage.default.addProductByIndex(0);\n_CartPage.default.addProductByIndex(1);\n// Verifica badge carrello\n_CartPage.default.getCartCount().should('contain.text', '2');\n// Verifica nomi prodotti nel carrello\n_CartPage.default.openCart();\n_CartPage.default.getItemNames().then(names => {\n  expect(names).to.include.members(['Sauce Labs Backpack', 'Sauce Labs Bike Light']);\n});",
+              "err": {
+                "message": "AssertionError: expected [ Array(2) ] to be a superset of [ Array(2) ]",
+                "estack": "AssertionError: expected [ Array(2) ] to be a superset of [ Array(2) ]\n    at Context.eval (webpack://cypressclean/./cypress/e2e/regression/regression.cy.js:54:31)\n    at getRet (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:121565:20)\n    at tryCatcher (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:4285:29)\n    at Context.thenFn (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:121576:66)\n    at Context.then (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:121827:21)",
+                "diff": "- [ 'Sauce Labs Backpack', 'Sauce Labs Bolt T-Shirt' ]\n+ [ 'Sauce Labs Backpack', 'Sauce Labs Bike Light' ]\n"
+              },
+              "uuid": "5a3244ea-824f-47b5-8f7b-93bec015a32a",
+              "parentUUID": "da029057-e5ee-42b5-b93e-b3fc7287ff9c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Rimuove tutti i prodotti dal carrello",
+              "fullTitle": "Regression Suite - SauceDemo Rimuove tutti i prodotti dal carrello",
+              "timedOut": null,
+              "duration": 1728,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_LoginPage.default.login('standard_user', 'secret_sauce');\n// Aggiunge 2 prodotti\n_CartPage.default.addProductByIndex(0);\n_CartPage.default.addProductByIndex(1);\n_CartPage.default.openCart();\n_CartPage.default.removeAllProducts();\n// Verifica che carrello sia vuoto\n_CartPage.default.getCartItemCount().should('have.length', 0);\n_CartPage.default.getCartCount().should('not.exist');",
+              "err": {},
+              "uuid": "48bf6b64-eda5-4d4d-8be7-b9d1607b8c75",
+              "parentUUID": "da029057-e5ee-42b5-b93e-b3fc7287ff9c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Compila e invia il form contatti",
+              "fullTitle": "Regression Suite - SauceDemo Compila e invia il form contatti",
+              "timedOut": null,
+              "duration": 5365,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "_LoginPage.default.login('standard_user', 'secret_sauce');\n_FormPage.default.fillForm('Marco', 'marco@example.com', 'Test portfolio form');\n// Verifica conferma del form\ncy.contains('Form submitted').should('be.visible');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `#name`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `#name`, but never found it.\n    at get nameInput (webpack://cypressclean/./cypress/pages/FormPage.js:2:30)\n    at FormPage.fillForm (webpack://cypressclean/./cypress/pages/FormPage.js:8:9)\n    at Context.eval (webpack://cypressclean/./cypress/e2e/regression/regression.cy.js:85:13)",
+                "diff": null
+              },
+              "uuid": "0f8ab5c9-ef11-485a-bcd1-bc35c385b255",
+              "parentUUID": "da029057-e5ee-42b5-b93e-b3fc7287ff9c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Ordina prodotti per prezzo crescente (low to high)",
+              "fullTitle": "Regression Suite - SauceDemo Ordina prodotti per prezzo crescente (low to high)",
+              "timedOut": null,
+              "duration": 1378,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_LoginPage.default.login('standard_user', 'secret_sauce');\n_ProductsPage.default.selectSortOption('lohi'); // low to high\n_ProductsPage.default.productPrice().first().should('contain.text', '7.99'); // prezzo più basso",
+              "err": {},
+              "uuid": "a3435e4a-5695-48bd-abe2-b2a65d9aaeaf",
+              "parentUUID": "da029057-e5ee-42b5-b93e-b3fc7287ff9c",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "5eb98676-da6e-4e33-85f2-28f8639daf7c",
+            "9e9be73b-c371-4bdf-9750-8ff6d5657aac",
+            "48bf6b64-eda5-4d4d-8be7-b9d1607b8c75",
+            "a3435e4a-5695-48bd-abe2-b2a65d9aaeaf"
+          ],
+          "failures": [
+            "5a3244ea-824f-47b5-8f7b-93bec015a32a",
+            "0f8ab5c9-ef11-485a-bcd1-bc35c385b255"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 13532,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}

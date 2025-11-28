@@ -1,0 +1,105 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-11-28T16:27:39.435Z",
+    "end": "2025-11-28T16:27:40.207Z",
+    "duration": 772,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "ea032df2-7bcc-432a-a872-bc2e94a3040e",
+      "title": "",
+      "fullFile": "cypress\\e2e\\smoke\\01_homepage_realsite.cy.js",
+      "file": "cypress\\e2e\\smoke\\01_homepage_realsite.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "ba587454-9689-41cd-a0f8-9fe48e1c4295",
+          "title": "Homepage Smoke Test - SauceDemo",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Dovrebbe mostrare correttamente il form di login",
+              "fullTitle": "Homepage Smoke Test - SauceDemo Dovrebbe mostrare correttamente il form di login",
+              "timedOut": null,
+              "duration": 634,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Verifica visibilità campi login usando Page Object\n_LoginPage.default.usernameInput.should('be.visible');\n_LoginPage.default.passwordInput.should('be.visible');\n_LoginPage.default.loginButton.should('be.visible');\n// Controllo aggiuntivo: messaggi di errore non presenti all’inizio\n_LoginPage.default.errorMessage.should('not.exist');",
+              "err": {},
+              "uuid": "da2e0596-cc28-4642-9e5d-14252b5e30e2",
+              "parentUUID": "ba587454-9689-41cd-a0f8-9fe48e1c4295",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "da2e0596-cc28-4642-9e5d-14252b5e30e2"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 634,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}

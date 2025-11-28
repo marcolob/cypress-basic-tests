@@ -1,0 +1,101 @@
+// cypress/e2e/regression/regression.cy.js
+import LoginPage from '../../pages/LoginPage';
+import ProductsPage from '../../pages/ProductsPage';
+import CartPage from '../../pages/CartPage';
+import FormPage from '../../pages/FormPage';
+
+describe('Regression Suite - SauceDemo', () => {
+
+  beforeEach(() => {
+    // Visita pagina di login prima di ogni test
+    cy.visit('/');
+  });
+
+  // ---------------------------
+  // 🔹 LOGIN POSITIVO
+  // ---------------------------
+  it('Login positivo con credenziali valide', () => {
+    LoginPage.login('standard_user', 'secret_sauce');
+    cy.url().should('include', '/inventory.html');
+  });
+
+  // ---------------------------
+  // 🔹 LOGIN NEGATIVO
+  // ---------------------------
+  it('Login negativo con credenziali errate', () => {
+    LoginPage.login('wrong_user', 'wrong_pass');
+    LoginPage.errorMessage
+      .should('be.visible')
+      .and('contain.text', 'Username and password do not match any user in this service');
+  });
+
+  // ---------------------------
+  // 🔹 ADD TO CART
+  // ---------------------------
+  it('Aggiunge prodotti al carrello e verifica badge e titoli', () => {
+    LoginPage.login('standard_user', 'secret_sauce');
+
+    // Verifica titoli dei primi 2 prodotti
+    ProductsPage.productTitle().then($titles => {
+      expect($titles.eq(0)).to.contain.text('Sauce Labs Backpack');
+      expect($titles.eq(1)).to.contain.text('Sauce Labs Bike Light');
+    });
+
+    // Aggiunge primi 2 prodotti
+    CartPage.addProductByIndex(0);
+    CartPage.addProductByIndex(1);
+
+    // Verifica badge carrello
+    CartPage.getCartCount().should('contain.text', '2');
+
+    // Verifica nomi prodotti nel carrello
+    CartPage.openCart();
+    CartPage.getItemNames().then(names => {
+      expect(names).to.include.members([
+        'Sauce Labs Backpack', 
+        'Sauce Labs Bike Light'
+      ]);
+    });
+  });
+
+  // ---------------------------
+  // 🔹 REMOVE PRODUCTS
+  // ---------------------------
+  it('Rimuove tutti i prodotti dal carrello', () => {
+    LoginPage.login('standard_user', 'secret_sauce');
+
+    // Aggiunge 2 prodotti
+    CartPage.addProductByIndex(0);
+    CartPage.addProductByIndex(1);
+
+    CartPage.openCart();
+    CartPage.removeAllProducts();
+
+    // Verifica che carrello sia vuoto
+    CartPage.getCartItemCount().should('have.length', 0);
+    CartPage.getCartCount().should('not.exist');
+  });
+
+  // ---------------------------
+  // 🔹 FORM TEST (contact / checkout simulation)
+  // ---------------------------
+  it('Compila e invia il form contatti', () => {
+    LoginPage.login('standard_user', 'secret_sauce');
+
+    FormPage.fillForm('Marco', 'marco@example.com', 'Test portfolio form');
+
+    // Verifica conferma del form
+    cy.contains('Form submitted').should('be.visible');
+  });
+
+  // ---------------------------
+  // 🔹 SORT / FILTER TEST
+  // ---------------------------
+  it('Ordina prodotti per prezzo crescente (low to high)', () => {
+    LoginPage.login('standard_user', 'secret_sauce');
+
+    ProductsPage.selectSortOption('lohi'); // low to high
+    ProductsPage.productPrice().first().should('contain.text', '7.99'); // prezzo più basso
+  });
+
+});

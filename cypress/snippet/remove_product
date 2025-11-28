@@ -1,0 +1,145 @@
+// ============================
+// CART — REMOVE PRODUCTS SNIPPET
+// ============================
+
+/*
+  Page Object: CartPage
+  - addProductByIndex(index)
+  - addProductByDataTest(productDataTest)
+  - removeProductByIndex(index)
+  - removeProductByName(name)
+  - removeAllProducts()
+  - openCart()
+  - getCartCount()
+  - getCartItemCount()
+  - getItemNames()
+  - getItemPrices()
+*/
+
+/*
+  Test files naming convention:
+  - cart_remove_single_product.cy.js  -> singolo prodotto
+  - cart_remove_multiple_products.cy.js -> multiprodotto
+*/
+
+/*
+  SCENARIOS COVERED:
+  1️⃣ Remove single product
+     - rimuove 1 prodotto usando index
+     - badge aggiornato correttamente
+  2️⃣ Remove multiple products (index)
+     - rimuove 2 prodotti sempre cliccando index 0
+     - badge aggiornato
+  3️⃣ Remove multiple products (by name)
+     - rimuove 2 prodotti specifici
+     - verifica prodotti rimasti
+  4️⃣ Remove all products
+     - utilizza metodo removeAllProducts()
+     - carrello vuoto, badge scompare
+*/
+
+/*
+  Example test snippet for removeAllProducts:
+*/
+
+import CartPage from '../../pages/CartPage';
+
+describe('Cart — Remove Multiple Products', () => {
+  beforeEach(() => {
+    cy.visit('/');
+    // login
+    cy.get('[data-test=username]').type('standard_user');
+    cy.get('[data-test=password]').type('secret_sauce');
+    cy.get('[data-test=login-button]').click();
+
+    // aggiungo 3 prodotti
+    CartPage.addProductByIndex(0);
+    CartPage.addProductByIndex(1);
+    CartPage.addProductByIndex(2);
+
+    CartPage.openCart();
+  });
+
+  it('should remove all products using removeAllProducts()', () => {
+    CartPage.removeAllProducts();
+
+    CartPage.getCartItemCount().should('have.length', 0);
+    CartPage.getCartCount().should('not.exist'); // badge scompare
+  });
+});
+
+
+// notes//
+
+// ============================
+// CART — REMOVE PRODUCTS RECAP
+// ============================
+
+/*
+  PAGE OBJECT METHODS USED:
+  - removeProductByIndex(index)
+  - removeProductByName(name)
+  - removeAllProducts()
+  - getCartCount()
+  - getCartItemCount()
+*/
+
+/*
+  TEST FILES:
+  - cart_remove_single_product.cy.js    -> singolo prodotto
+  - cart_remove_multiple_products.cy.js -> multiprodotto
+*/
+
+/*
+  SCENARIOS:
+*/
+
+// 1️⃣ Remove singolo prodotto
+/*
+  - Metodo PO: removeProductByIndex(index)
+  - File: cart_remove_single_product.cy.js
+  - Descrizione: rimuove un solo prodotto usando index
+  - Verifica:
+      • Numero prodotti diminuito di 1
+      • Badge aggiornato
+*/
+
+// 2️⃣ Remove multiprodotto usando index
+/*
+  - Metodo PO: removeProductByIndex(index)
+  - File: cart_remove_multiple_products.cy.js
+  - Descrizione: rimuove più prodotti sempre cliccando index 0
+  - Verifica:
+      • Numero prodotti correttamente aggiornato
+      • Badge aggiornato
+*/
+
+// 3️⃣ Remove multiprodotto usando nome prodotto
+/*
+  - Metodo PO: removeProductByName(name)
+  - File: cart_remove_multiple_products.cy.js
+  - Descrizione: rimuove prodotti specifici identificandoli per nome
+  - Verifica:
+      • Prodotti rimossi non presenti nel carrello
+      • Numero prodotti rimanenti corretto
+*/
+
+// 4️⃣ Remove tutti i prodotti (helper)
+ /*
+  - Metodo PO: removeAllProducts()
+  - File: cart_remove_multiple_products.cy.js
+  - Descrizione: rimuove tutti i prodotti dal carrello
+  - Verifica:
+      • Carrello vuoto
+      • Badge carrello scompare (not.exist)
+*/
+
+/*
+  BEST PRACTICES:
+  1. Ogni scenario in un it() separato
+  2. Usare sempre il PO
+  3. Nomi file chiari e coerenti
+  4. Commenti e note didattiche
+  5. Quando rimuovi più prodotti con index → cliccare sempre index 0
+*/
+

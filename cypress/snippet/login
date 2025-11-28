@@ -1,0 +1,61 @@
+// ============================
+// LOGIN TESTS SNIPPET
+// ============================
+
+/*
+  Page Object: LoginPage
+  - enterUsername(username)
+  - enterPassword(password)
+  - clickLogin()
+  - login(username, password)
+  - errorMessage
+*/
+
+// ============================
+// LOGIN POSITIVO
+// ============================
+
+import LoginPage from '../../pages/LoginPage';
+
+describe('Login Tests - SauceDemo', () => {
+  beforeEach(() => {
+    cy.visit('/'); // baseUrl preso da cypress.config.js
+  });
+
+  it('should login successfully with valid credentials', () => {
+    LoginPage.login('standard_user', 'secret_sauce');
+    cy.url().should('include', '/inventory.html');
+  });
+});
+
+// ============================
+// LOGIN NEGATIVO
+// ============================
+
+describe('Login Negativo', () => {
+  beforeEach(() => {
+    cy.visit('/');
+  });
+
+  it('Mostra errore con username e password sbagliati', () => {
+    LoginPage.login('wrong_user', 'wrong_password');
+    LoginPage.errorMessage
+      .should('be.visible')
+      .and('contain.text', 'Username and password do not match any user in this service');
+  });
+
+  it('Mostra errore se il campo username è vuoto', () => {
+    LoginPage.login('', 'any_password');
+    LoginPage.errorMessage
+      .should('be.visible')
+      .and('contain.text', 'Username is required');
+  });
+
+  it('Mostra errore se il campo password è vuoto', () => {
+    LoginPage.login('standard_user', '');
+    LoginPage.errorMessage
+      .should('be.visible')
+      .and('contain.text', 'Password is required');
+  });
+
+  it('Mostra errore se entrambi i campi sono v

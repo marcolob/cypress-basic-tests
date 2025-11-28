@@ -1,0 +1,109 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2025-11-28T13:33:16.454Z",
+    "end": "2025-11-28T13:33:20.334Z",
+    "duration": 3880,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "b24bbebc-5980-4338-98b9-e2557c62146f",
+      "title": "",
+      "fullFile": "cypress\\e2e\\smoke\\05_form_realsite.cy.js",
+      "file": "cypress\\e2e\\smoke\\05_form_realsite.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "26816e19-4fc1-432b-bf11-7ad2e7a850e2",
+          "title": "Form / Checkout Smoke Test - SauceDemo",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Dovrebbe aggiungere prodotti al carrello e compilare il form di checkout",
+              "fullTitle": "Form / Checkout Smoke Test - SauceDemo Dovrebbe aggiungere prodotti al carrello e compilare il form di checkout",
+              "timedOut": null,
+              "duration": 3801,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "// Aggiunge i primi 2 prodotti al carrello\n_CartPage.default.addProductByIndex(0);\n_CartPage.default.addProductByIndex(1);\n// Verifica badge carrello\n_CartPage.default.getCartCount().should('contain.text', '2');\n// Apri carrello\n_CartPage.default.openCart();\n// Controlla nomi dei prodotti nel carrello\n_CartPage.default.getItemNames().then(names => {\n  expect(names).to.include.members(['Sauce Labs Backpack', 'Sauce Labs Bike Light']);\n});\n// Compila form (simula checkout o contact form)\n_FormPage.default.fillForm('Marco', 'marco@example.com', 'Test smoke form');\n// Verifica eventuale conferma o redirect\ncy.contains('Form submitted').should('be.visible');",
+              "err": {
+                "message": "AssertionError: expected [ Array(2) ] to be a superset of [ Array(2) ]",
+                "estack": "AssertionError: expected [ Array(2) ] to be a superset of [ Array(2) ]\n    at Context.eval (webpack://cypressclean/./cypress/e2e/smoke/05_form_realsite.cy.js:29:31)\n    at getRet (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:121565:20)\n    at tryCatcher (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:4285:29)\n    at Context.thenFn (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:121576:66)\n    at Context.then (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:121827:21)",
+                "diff": "- [ 'Sauce Labs Backpack', 'Sauce Labs Bolt T-Shirt' ]\n+ [ 'Sauce Labs Backpack', 'Sauce Labs Bike Light' ]\n"
+              },
+              "uuid": "132c69f9-f02b-4594-901e-95d9079e85c4",
+              "parentUUID": "26816e19-4fc1-432b-bf11-7ad2e7a850e2",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "132c69f9-f02b-4594-901e-95d9079e85c4"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 3801,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}

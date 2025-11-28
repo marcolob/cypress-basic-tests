@@ -1,0 +1,109 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2025-11-28T15:09:16.451Z",
+    "end": "2025-11-28T15:09:22.837Z",
+    "duration": 6386,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "308295c6-cc79-4ec7-91a3-5f8992a243e9",
+      "title": "",
+      "fullFile": "cypress\\e2e\\smoke\\05_form_realsite.cy.js",
+      "file": "cypress\\e2e\\smoke\\05_form_realsite.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "f3b2b033-03d9-4c63-8d8b-c444f5f51f0d",
+          "title": "Form / Checkout Smoke Test - SauceDemo",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Add specific products to cart and fill the checkout form",
+              "fullTitle": "Form / Checkout Smoke Test - SauceDemo Add specific products to cart and fill the checkout form",
+              "timedOut": null,
+              "duration": 6318,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "// Add products using data-test\n_CartPage.default.addProductByDataTest('add-to-cart-sauce-labs-backpack');\n_CartPage.default.addProductByDataTest('add-to-cart-sauce-labs-bike-light');\n// Check cart badge\n_CartPage.default.getCartCount().should('contain.text', '2');\n// Open cart\n_CartPage.default.openCart();\n// Verify products in the cart\n_CartPage.default.getItemNames().then(names => {\n  expect(names).to.include.members(['Sauce Labs Backpack', 'Sauce Labs Bike Light']);\n  expect(names).to.have.length(2);\n});\n// Fill form\n_FormPage.default.fillForm('Marco', 'marco@example.com', 'Test smoke form');\n// Verify submission confirmation\ncy.contains('Form submitted').should('be.visible');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `#name`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `#name`, but never found it.\n    at get nameInput (webpack://cypressclean/./cypress/pages/FormPage.js:2:30)\n    at FormPage.fillForm (webpack://cypressclean/./cypress/pages/FormPage.js:8:9)\n    at Context.eval (webpack://cypressclean/./cypress/e2e/smoke/05_form_realsite.cy.js:34:13)",
+                "diff": null
+              },
+              "uuid": "f43af14f-e898-4a0e-b3f2-0dabb79badd8",
+              "parentUUID": "f3b2b033-03d9-4c63-8d8b-c444f5f51f0d",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "f43af14f-e898-4a0e-b3f2-0dabb79badd8"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 6318,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}

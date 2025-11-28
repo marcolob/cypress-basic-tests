@@ -1,0 +1,105 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-11-28T16:28:01.402Z",
+    "end": "2025-11-28T16:28:02.970Z",
+    "duration": 1568,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "84a68dec-7991-447f-bbe3-f8827a095250",
+      "title": "",
+      "fullFile": "cypress\\e2e\\smoke\\08_link_realsite.cy.js",
+      "file": "cypress\\e2e\\smoke\\08_link_realsite.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "78ec5d19-c11d-40af-bfbf-bd4d27145d2b",
+          "title": "Link Smoke Test - SauceDemo",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Dovrebbe cliccare sul primo prodotto e controllare URL",
+              "fullTitle": "Link Smoke Test - SauceDemo Dovrebbe cliccare sul primo prodotto e controllare URL",
+              "timedOut": null,
+              "duration": 1513,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Clicca sul primo prodotto\ncy.get('.inventory_item_name').first().click();\n// Verifica che l'URL includa \"/inventory-item.html\" (pagina dettaglio prodotto)\ncy.url().should('include', 'inventory-item.html');",
+              "err": {},
+              "uuid": "e82e823f-44ad-4a9e-8b92-cb2d33f0faa5",
+              "parentUUID": "78ec5d19-c11d-40af-bfbf-bd4d27145d2b",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "e82e823f-44ad-4a9e-8b92-cb2d33f0faa5"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1513,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}

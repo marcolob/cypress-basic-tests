@@ -32,7 +32,7 @@ jobs:
 
       # 5️⃣ Upload HTML Report
       - name: Upload HTML Report
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v3
         with:
           name: mochawesome-report
           path: cypress/reports/html/report.html

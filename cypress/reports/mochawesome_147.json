@@ -1,0 +1,105 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-11-28T12:41:06.613Z",
+    "end": "2025-11-28T12:41:11.314Z",
+    "duration": 4701,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "b3db9c79-a634-457c-8113-7808e45a7bc1",
+      "title": "",
+      "fullFile": "cypress\\e2e\\basics\\dropdown-radio-behavior.cy.js",
+      "file": "cypress\\e2e\\basics\\dropdown-radio-behavior.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "8d85aac7-f35e-4e4a-b29b-3c352954cf8a",
+          "title": "Product Sorting - Name Z to A (Radio-like Example)",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should sort products by Name Z → A using dropdown",
+              "fullTitle": "Product Sorting - Name Z to A (Radio-like Example) should sort products by Name Z → A using dropdown",
+              "timedOut": null,
+              "duration": 4512,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.product_sort_container').select('za');\n// 🔹 Verifica: primo prodotto deve essere quello che inizia per \"T\"\ncy.get('.inventory_item').first().find('.inventory_item_name').should('contain', 'Test.allTheThings() T-Shirt (Red)');",
+              "err": {},
+              "uuid": "9661a8ae-7340-4429-b068-2fef9ab72e08",
+              "parentUUID": "8d85aac7-f35e-4e4a-b29b-3c352954cf8a",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "9661a8ae-7340-4429-b068-2fef9ab72e08"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 4512,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.3.2"
+    }
+  }
+}
