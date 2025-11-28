@@ -92,16 +92,16 @@ support/ – Global setup: reusable Cypress commands, before/after hooks, shared
 
 ⚡ How to Run Tests
 
-Aprire Cypress GUI (modalità interattiva):
-npm run cypress:open
+Open Cypress GUI (interactive mode):
+npm run cypress: open
 
-Eseguire tutti i test headless:
-npm run cypress:run
+Run all headless tests:
+npm run cypress: run
 
-Eseguire uno specifico spec:
+Run a specific specification:
 npx cypress run --spec "cypress/e2e/cart/add_product_cart_multiple.cy.js"
 
-I report HTML e JSON vengono generati automaticamente in cypress/reports/ e gli screenshot in cypress/screenshots/**/*.png.
+HTML and JSON reports are automatically generated in cypress/reports/ and screenshots in cypress/screenshots/**/*.png.
 
 ---
 
